@@ -1,9 +1,12 @@
 import Router from "./components/Router.jsx"
+import { GlobalProvider } from './GlobalContext'
 
 function App() {
 
   return (
-    <Router />
+    <GlobalProvider>
+      <Router />
+    </GlobalProvider>
   )
 }
 

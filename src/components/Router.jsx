@@ -4,7 +4,7 @@ import Home from "../pages/Home.jsx"
 
 
 
-export default function Router() {
+function Router() {
 
   return (
     <BrowserRouter>
@@ -20,3 +20,5 @@ export default function Router() {
   )
 
 }
+
+export default Router

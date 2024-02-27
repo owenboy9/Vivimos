@@ -16,7 +16,12 @@ function Router() {
         {/*Our route definitions(controller)*/}
 
           <Route path="/" element={<Home />} /> {/*kan va självstängande element om det inte händer något mellan taggarna*/}
-          <Route path="/form" element={<Form />} />      </Routes>
+          <Route path="/form" element={<Form />} />
+
+          <Route path="/createOffer2" element={<Offer />} />
+        router
+
+      </Routes>
     </BrowserRouter>
   )
 

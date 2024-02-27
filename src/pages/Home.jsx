@@ -10,7 +10,7 @@ function Home() {
   return (
     <>
     <h1>Hej detta är starten</h1>
-    {ads.map(ad => <p>{ad}</p>)}
+      {ads.map(ad => <p>{ad}</p>)}
     </>
   );
 }

@@ -59,7 +59,7 @@ function CreateOffer2() {
         value={form.presentation}
         onChange={handleTextChange}
         placeholder="Skriv en presentation av livet du erbjuder!" />
-
+git
       <p>Vilken ort utspelar sig livet på:</p>
       <input type="text"
         name="ort"

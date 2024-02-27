@@ -1,0 +1,9 @@
+    <Link to="/createOffer2">Skapa annons test</Link> |&nbsp;
+nav
+
+
+
+        <Route path="/createOffer2" element={<Offer2 />} />
+router
+
+

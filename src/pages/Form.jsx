@@ -45,6 +45,8 @@ function Form() {
           <input type="radio" name="options" value="option3" checked={selectedOption === 'option3'}
                  onChange={handleChange}/>
         </label>
+
+        <h3>Om dig:</h3>
         <textarea value={textArea} onChange={handleChange}/>
         <button type="submit">Submit</button>
       </form>

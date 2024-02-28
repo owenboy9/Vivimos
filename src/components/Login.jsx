@@ -1,33 +1,51 @@
-/*Create a JSON file for Mock Data:
 
-Create a JSON file (e.g., users.json) that contains mock user and admin data.
-Include fields such as username, password, and role (to distinguish between users and admins).
-Set Up State in Login Component:
+import React, { useState, useEffect } from 'react'
 
-Create a React component (e.g., Login) for the login functionality.
-Set up state variables to store the username, password, and role entered by the user.
-Fetch Mock Data from JSON File:
 
-Use fetch or any other HTTP client to fetch mock data from the JSON file within the Login component.
-Parse the JSON response and store it in the component's state.
-Handle User Input:
+function Login() {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [role, setRole] = useState('')
 
-Implement functions to handle changes in the username and password input fields.
-Update the corresponding state variables (username and password) as the user types.
-Handle Login Button Click:
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch('login.json')
+        const data = await response.json()
+        console.log(data)
+      } catch (error) {
+        console.error('Error fetching mock data:', error)
+      }
+    }
+    fetchData()
+  }, []); // Empty dependency array to run the effect only once when the component mounts
 
-Implement a function to handle the login button click event.
-Validate the username and password entered by the user against the mock data from the JSON file.
-If the credentials are valid, set the user's role in the component's state.
-Render User Interface:
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
 
-Render input fields for username and password.
-Render a login button.
-Optionally, render additional elements based on the user's role (e.g., different UI components for users and admins).
-Display Error Messages:
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
 
-Display error messages if the username or password is incorrect.
-Optionally, display a loading indicator while fetching mock data from the JSON file.
-Redirect After Successful Login:
+  return (
+    <div>
+      <h2>Login</h2>
+      <form>
+        <label>
+          Username:
+          <input type="text" value={username} onChange={handleUsernameChange} />
+        </label>
+        <br />
+        <label>
+          Password:
+          <input type="password" value={password} onChange={handlePasswordChange} />
+        </label>
+        <br />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  );
+}
 
-Implement logic to redirect the user to different pages based on their role after successful login (e.g., to a user dashboard or an admin dashboard).*/
+export default Login

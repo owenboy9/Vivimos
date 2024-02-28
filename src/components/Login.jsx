@@ -18,7 +18,7 @@ function Login() {
       }
     }
     fetchData()
-  }, []); // Empty dependency array to run the effect only once when the component mounts
+  }, []) // Empty dependency array to run the effect only once when the component mounts
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value)
@@ -30,7 +30,6 @@ function Login() {
 
   return (
     <div>
-      <h2>Login</h2>
       <form>
         <label>
           Username:

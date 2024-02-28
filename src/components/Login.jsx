@@ -21,12 +21,12 @@ function Login() {
   }, []); // Empty dependency array to run the effect only once when the component mounts
 
   const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
+    setUsername(event.target.value)
+  }
 
   const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
+    setPassword(event.target.value)
+  }
 
   return (
     <div>
@@ -45,7 +45,7 @@ function Login() {
         <button type="submit">Login</button>
       </form>
     </div>
-  );
+  )
 }
 
 export default Login

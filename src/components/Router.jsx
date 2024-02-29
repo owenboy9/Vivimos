@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Nav from "./Nav.jsx"
 import Home from "../pages/Home.jsx"
 import Form from "../pages/Form.jsx"
+import Offer from "../pages/Offer.jsx"
 
 
 
@@ -17,9 +18,8 @@ function Router() {
 
           <Route path="/" element={<Home />} /> {/*kan va självstängande element om det inte händer något mellan taggarna*/}
           <Route path="/form" element={<Form />} />
+          <Route path="/createOffer" element={<Offer />} />
 
-          <Route path="/createOffer2" element={<Offer />} />
-        router
 
       </Routes>
     </BrowserRouter>

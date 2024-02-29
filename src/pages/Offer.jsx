@@ -87,7 +87,6 @@ function Section2({form, handleChange}) {
       </select>
 
 
-
       <h3>Primär typ av boende under livsbytesperioden:</h3>
       <label>
         Lägenhet
@@ -120,14 +119,82 @@ function Section2({form, handleChange}) {
         Annat, vilket?
         <input type="radio" name="boende" value="Annat" checked={form.boende === "Annat"} onChange={handleChange}/>
         {form.boende === "Annat" && (
-          <input type="text" name="boendeAnnat" value={form.annatBoende} onChange={handleChange}
+          <input type="text" name="boendeAnnat" value={form.boendeAnnat} onChange={handleChange}
                  placeholder="Ange boende"/>
         )}
-      </label>    </>
+      </label>
+      <h3>Bor du i:</h3>
+      <select name="stad" value={form.stad} onChange={handleChange}>
+        <option value="">Välj...</option>
+        <option value="Storstad">Storstad (100 000+)</option>
+        <option value="Mellanstor stad">Mellanstor stad (20 000 - 100 000)</option>
+        <option value="Småstad">Småstad (3 000 - 20 000)</option>
+        <option value="By">By (3 000-)</option>
+        <option value="Bystan">Bystan (befriat från grannar)</option>
+      </select>
+
+      {form.stad === "Storstad" || form.stad === "Mellanstor stad" ? (
+        <select name="stadAlternativ" value={form.stadAlternativ} onChange={handleChange}>
+          <option value="">Välj...</option>
+          <option value="Centralt">Centralt</option>
+          <option value="Villaförort">Villaförort</option>
+          <option value="Betongförort">Betongförort</option>
+        </select>
+      ) : null}
+
+      <h3>Ditt boende är:</h3>
+      <label>
+        Naturnära (skog)
+        <input type="checkbox" name="boendeSkog" checked={form.boendeSkog} onChange={handleChange}/>
+      </label>
+      <label>
+        Naturnära (hav/sjö)
+        <input type="checkbox" name="boendeHav" checked={form.boendeHav} onChange={handleChange}/>
+      </label>
+      <label>
+        Kulturnära (biografer, teater, muséer, gallerier)
+        <input type="checkbox" name="boendeKultur" checked={form.boendeKultur} onChange={handleChange}/>
+      </label>
+      <label>
+        Shoppingnära
+        <input type="checkbox" name="boendeShopping" checked={form.boendeShopping} onChange={handleChange}/>
+      </label>
+      <h3>Har du bil?</h3>
+      <label>
+        Ja
+        <input
+          type="radio"
+          name="bil"
+          value="true"
+          checked={form.bil === true}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Nej
+        <input
+          type="radio"
+          name="bil"
+          value="false"
+          checked={form.bil === false}
+          onChange={handleChange}
+        />
+      </label>
+
+      {form.bil && (
+        <>
+          <p>Märke/modell/år:</p>
+          <input type="text"
+                 name="bilinfo"
+                 value={form.bilinfo}
+                 onChange={handleChange}/>
+        </>
+      )}
+    </>
   );
 }
 
-function Section3({ form, handleChange }) {
+function Section3({form, handleChange}) {
   return (
     <>
       <h1>Skapa ett erbjudande om livsbyte (3)</h1>
@@ -143,7 +210,9 @@ function Section3({ form, handleChange }) {
              name="fritidsintressen"
              value={form.fritidsintressen}
              onChange={handleChange}/>
-      </>
+
+
+    </>
   );
 }
 
@@ -243,8 +312,74 @@ function Section4({form, handleChange}) {
                  onChange={handleChange}/>
         </>
       )}
+      <h3>Har du barn?</h3>
+      <label>
+        Ja
+        <input
+          type="radio"
+          name="barn"
+          value="true"
+          checked={form.barn === true}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Nej
+        <input
+          type="radio"
+          name="barn"
+          value="false"
+          checked={form.barn === false}
+          onChange={handleChange}
+        />
+      </label>
+      {form.barn === true && (
+        <>
+          <h3>Hur många?</h3>
+          <input
+            type="number"
+            name="barnAntal"
+            value={form.barnAntal}
+            onChange={handleChange}
+            min="1"
+          />
 
-      <p>Har du husdjur?</p>
+          <h3>Bor de hos dig?</h3>
+          <label>
+            Ja
+            <input
+              type="radio"
+              name="barnBoende"
+              value="Ja"
+              checked={form.barnBoende === "Ja"}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Delvis
+            <input
+              type="radio"
+              name="barnBoende"
+              value="Delvis"
+              checked={form.barnBoende === "Delvis"}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Nej
+            <input
+              type="radio"
+              name="barnBoende"
+              value="Nej"
+              checked={form.barnBoende === "Nej"}
+              onChange={handleChange}
+            />
+          </label>
+        </>
+      )}
+
+
+      <h3>Har du husdjur?</h3>
       <label>
         Ja
         <input
@@ -268,7 +403,7 @@ function Section4({form, handleChange}) {
 
       {form.husdjurHar && (
         <>
-          <p>Vilket/vilka djur är det?</p>
+        <p>Vilket/vilka djur är det?</p>
 
           <label>
             Hund
@@ -302,7 +437,7 @@ function Section4({form, handleChange}) {
             <input
               type="checkbox"
               name="husdjurHäst"
-              checked={form.Häst}
+              checked={form.husdjurHäst}
               onChange={handleChange}
             />
           </label>
@@ -320,7 +455,7 @@ function Section4({form, handleChange}) {
   );
 }
 
-function Section5({ form, handleChange }) {
+function Section5({form, handleChange}) {
   return (
     <>
       <h1>Skapa ett erbjudande om livsbyte (5)</h1>
@@ -352,17 +487,24 @@ function CreateOffer() {
     sysselsättning: "",
     relstatus: "",
     partnerinfo: "",
+    barnAntal: "",
+    barnBoende: "",
     husdjurHar: false,
     husdjurHund: false,
     husdjurKatt: false,
     husdjurFågel: false,
     husdjurHäst: false,
     husdjurAnnat: "",
-    bil: "",
+    stad: "",
+    stadAlternativ: "",
+    boendeSkog: false,
+    boendeHav: false,
+    boendeKultur: false,
+    boendeShopping: false,
+    bil: false,
     bilinfo: "",
-    barn: "",
+    barn: false,
     fritidsintressen: "",
-    övrigt: "",
     presentation: "",
     ålder: "",
     kön: "",
@@ -379,11 +521,18 @@ function CreateOffer() {
         ...prevForm,
         [name]: checked,
       }));
-    } else if (name === "kön") {
-      setForm(prevForm => ({
-        ...prevForm,
-        kön: value,
-      }));
+    } else if (type === 'radio') {
+      if (value === 'true' || value === 'false') {
+        setForm(prevForm => ({
+          ...prevForm,
+          [name]: value === 'true',
+        }));
+      } else {
+        setForm(prevForm => ({
+          ...prevForm,
+          [name]: value,
+        }));
+      }
     } else if (name === "ålder") {
       if (value < 18 || value > 120) {
         alert("Ålder måste vara mellan 18 och 120");
@@ -393,43 +542,28 @@ function CreateOffer() {
           ålder: value,
         }));
       }
-    } else if (name === "husdjurAnnat") {
+    } else if (name === "boendeAnnat" || name === "bilinfo" || name === "partnerinfo" || name === "fritidsintressen" || name === "presentation" || name === "rubrik") {
       setForm(prevForm => ({
         ...prevForm,
-        husdjurAnnat: value,
+        [name]: value,
       }));
-    } else if (name === "relstatus") {
+    } else if (name === "kön" || name === "relstatus" || name === "län" || name === "boende" || name === "stad" || name === "stadAlternativ") {
       setForm(prevForm => ({
         ...prevForm,
-        relstatus: value
+        [name]: value,
       }));
-    } else if (name === "län") {
+    } else if (name === "barnAntal") {
       setForm(prevForm => ({
         ...prevForm,
-        län: value
+        barnAntal: parseInt(value),
       }));
-    } else if (name === "boende") {
+    } else {
       setForm(prevForm => ({
         ...prevForm,
-        boende: value
-      }));
-    } else if (name === "boendeAnnat") {
-      setForm(prevForm => ({
-        ...prevForm,
-        boendeAnnat: value
-      }));
-    } else if (name === "bil") {
-      setForm(prevForm => ({
-        ...prevForm,
-        bil: value === "true",
-      }));
-    } else {setForm(prevForm => ({
-        ...prevForm,
-        [name]: type === 'radio' ? value === "true" : value
+        [name]: value,
       }));
     }
   }
-
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -437,8 +571,7 @@ function CreateOffer() {
     alert(`Tack! Ditt liv i ${form.boende} i ${form.län}s län ligger nu ute för budgivning`)
   }
 
-  /*function CreateOffer() {
-    // Your existing form state management code goes here*/
+
 
   const [currentSection, setCurrentSection] = useState(1);
 
@@ -470,95 +603,5 @@ function CreateOffer() {
   );
 }
 
-  /*
 
-      <h3>Primärt boende under livsbytesperioden:</h3>
-      <label>
-        Lägenhet
-        <input type="radio" name="boende" value="Lägenhet" checked={form.boende === "Lägenhet"}
-               onChange={handleChange}/>
-      </label>
-      <label>
-        Villa
-        <input type="radio" name="boende" value="Villa" checked={form.boende === "Villa"} onChange={handleChange}/>
-      </label>
-      <label>
-        Gård
-        <input type="radio" name="boende" value="Gård" checked={form.boende === "Gård"} onChange={handleChange}/>
-      </label>
-      <label>
-        Sommarstuga
-        <input type="radio" name="boende" value="Sommarstuga" checked={form.boende === "Sommarstuga"}
-               onChange={handleChange}/>
-      </label>
-      <label>
-        Husvagn
-        <input type="radio" name="boende" value="Husvagn" checked={form.boende === "Husvagn"} onChange={handleChange}/>
-      </label>
-      <label>
-        Trappuppgång
-        <input type="radio" name="boende" value="Trappuppgång" checked={form.boende === "Trappuppgång"}
-               onChange={handleChange}/>
-      </label>
-      <label>
-        Annat, vilket?
-        <input type="radio" name="boende" value="Annat" checked={form.boende === "Annat"} onChange={handleChange}/>
-        {form.boende === "Annat" && (
-          <input type="text" name="boendeAnnat" value={form.annatBoende} onChange={handleChange}
-                 placeholder="Ange boende"/>
-        )}
-      </label>
-
-
-      <p>Vilken sysselsättning har du?:</p>
-      <input type="text"
-             name="sysselsättning"
-             value={form.sysselsättning}
-             onChange={handleChange}/>
-
-      <h3>Vilken typ av bostad bor du i?:</h3>
-
-
-
-
-
-      <p>Har du bil?</p>
-      <label>
-        Ja
-        <input
-          type="radio"
-          name="bil"
-          value="true"
-          checked={form.bil === "true"}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Nej
-        <input
-          type="radio"
-          name="bil"
-          value="false"
-          checked={form.bil === "false"}
-          onChange={handleChange}
-        />
-      </label>
-
-      {form.bil && (
-        <>
-          <p>Märke/modell/år:</p>
-          <input type="text"
-                 name="bilinfo"
-                 value={form.bilinfo}
-                 onChange={handleChange}/>
-        </>
-      )}
-
-
-      <button type="submit">Submit</button>
-    </form>
-
-  );
-}
-*/
 export default CreateOffer;

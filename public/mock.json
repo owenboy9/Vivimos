@@ -1,0 +1,68 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "jia-bao-yu",
+      "password": "password1",
+      "firstName": "Bao Yu",
+      "lastName": "Jia",
+      "email": "baoyu@redchamber.com"
+    },
+    {
+      "id": 2,
+      "username": "lin-dai-yu",
+      "password": "password2",
+      "firstName": "Dai Yu",
+      "lastName": "Lin",
+      "email": "daiyu@redchamber.com"
+    },
+    {
+      "id": 3,
+      "username": "xue-bao-chai",
+      "password": "password3",
+      "firstName": "Bao Chai",
+      "lastName": "Xue",
+      "email": "baochai@redchamber.com"
+    },
+    {
+      "id": 4,
+      "username": "wang-xi-feng",
+      "password": "password4",
+      "firstName": "Xi Feng",
+      "lastName": "Wang",
+      "email": "xifeng@redchamber.com"
+    },
+    {
+      "id": 5,
+      "username": "jia-tan-chun",
+      "password": "password5",
+      "firstName": "Tan Chun",
+      "lastName": "Jia",
+      "email": "tanchun@redchamber.com"
+    },
+    {
+      "id": 6,
+      "username": "cai-yun",
+      "password": "password6",
+      "firstName": "Cai Yun",
+      "lastName": "Cai",
+      "email": "caiyun@redchamber.com"
+    },
+    {
+      "id": 7,
+      "username": "xi-ren",
+      "password": "password7",
+      "firstName": "Xi Ren",
+      "lastName": "Xi",
+      "email": "xiren@redchamber.com"
+    },
+    {
+      "id": 8,
+      "username": "zheng-de",
+      "password": "password8",
+      "firstName": "Zheng De",
+      "lastName": "Zheng",
+      "email": "zhengde@redchamber.com"
+    }
+  ]
+}

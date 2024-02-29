@@ -4,6 +4,7 @@ function Nav() {
 
   return <nav>
     <Link to="/">Home</Link> |&nbsp;
+    
 
   </nav>
 }

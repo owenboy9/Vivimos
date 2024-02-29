@@ -1,0 +1,38 @@
+{
+  "Auctions": [
+    {
+      "Id": "1",
+      "UserId": "1",
+      "Title": " ",
+      "Descriptio": " ",
+      "StartDate": " ",
+      "EndDate": " "
+      
+    },
+    {
+      "Id": "2",
+      "UserId": "1",
+      "Title": " ",
+      "Descriptio": " ",
+      "StartDate": " ",
+      "EndDate": " "
+    },
+    {
+      "Id": "3",
+      "UserId": "1",
+      "Title": " ",
+      "Descriptio": " ",
+      "StartDate": " ",
+      "EndDate": " "
+    },
+    {
+      "Id": "4",
+      "UserId": "1",
+      "Title": " ",
+      "Descriptio": " ",
+      "StartDate": " ",
+      "EndDate": " "
+    }
+
+  ]
+}

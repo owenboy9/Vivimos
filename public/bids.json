@@ -1,0 +1,16 @@
+{
+  "Bids": [
+    {
+      "Id": "1",
+      "AuctionId": "1",
+      "BidderId": "1",
+      "Date": "29-02-2024"
+    },
+    {
+      "Id": "2",
+      "AuctionId": "3",
+      "BidderId": "4",
+      "Date": "29-02-2024"
+    }
+  ]
+}

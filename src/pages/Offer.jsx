@@ -534,14 +534,21 @@ function CreateOffer() {
         }));
       }
     } else if (name === "ålder") {
-      if (value < 18 || value > 120) {
-        alert("Ålder måste vara mellan 18 och 120");
+      const numValue = parseInt(value, 10);
+      if (isNaN(numValue) || numValue < 18 || numValue > 120) {
+        alert("Ålder måste vara ett nummer mellan 18 och 120");
       } else {
         setForm(prevForm => ({
           ...prevForm,
-          ålder: value,
+          ålder: value, // Keep it as string
         }));
       }
+    } else if (name === "barnAntal") {
+      setForm(prevForm => ({
+        ...prevForm,
+        [name]: value, // No need to parse to number, keep it as string
+      }));
+
     } else if (name === "boendeAnnat" || name === "bilinfo" || name === "partnerinfo" || name === "fritidsintressen" || name === "presentation" || name === "rubrik") {
       setForm(prevForm => ({
         ...prevForm,
@@ -551,11 +558,6 @@ function CreateOffer() {
       setForm(prevForm => ({
         ...prevForm,
         [name]: value,
-      }));
-    } else if (name === "barnAntal") {
-      setForm(prevForm => ({
-        ...prevForm,
-        barnAntal: parseInt(value),
       }));
     } else {
       setForm(prevForm => ({

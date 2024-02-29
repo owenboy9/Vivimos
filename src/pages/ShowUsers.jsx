@@ -23,8 +23,7 @@ function showUsers() {
       <ul>
       {mockUsers.map( user => 
         
-        <li>{user.username}</li>
-      
+        <li>{user.username}</li>   
       )}
       </ul>
       

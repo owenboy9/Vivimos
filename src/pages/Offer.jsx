@@ -1,106 +1,13 @@
 import { useState } from "react";
-function CreateOffer() {
-  const defaultOffer = {
-
-    rubrik: "",
-    län: "",
-    boende: "",
-    boendeAnnat: "",
-    sysselsättning: "",
-    relstatus: "",
-    partnerinfo: "",
-    husdjurHar: false,
-    husdjurHund: false,
-    husdjurKatt: false,
-    husdjurFågel: false,
-    husdjurHäst: false,
-    husdjurAnnat: "",
-    bil: "",
-    bilinfo: "",
-    barn: "",
-    fritidsintressen: "",
-    övrigt: "",
-    presentation: "",
-    ålder: "",
-    kön: "",
-  };
 
 
-  const [form, setForm] = useState(defaultOffer);
 
-  const handleChange = (event) => {
-    const {name, value, type, checked} = event.target;
-
-    if (type === 'checkbox') {
-      setForm(prevForm => ({
-        ...prevForm,
-        [name]: checked,
-      }));
-    } else if (name === "kön") {
-      setForm(prevForm => ({
-        ...prevForm,
-        kön: value,
-      }));
-    } else if (name === "ålder") {
-      if (value < 18 || value > 120) {
-        alert("Ålder måste vara mellan 18 och 120");
-      } else {
-        setForm(prevForm => ({
-          ...prevForm,
-          ålder: value,
-        }));
-      }
-    } else if (name === "husdjurAnnat") {
-      setForm(prevForm => ({
-        ...prevForm,
-        husdjurAnnat: value,
-      }));
-    } else if (name === "relstatus") {
-      setForm(prevForm => ({
-        ...prevForm,
-        relstatus: value
-      }));
-    } else if (name === "län") {
-      setForm(prevForm => ({
-        ...prevForm,
-        län: value
-      }));
-    } else if (name === "boende") {
-      setForm(prevForm => ({
-        ...prevForm,
-        boende: value
-      }));
-    } else if (name === "boendeAnnat") {
-      setForm(prevForm => ({
-        ...prevForm,
-        boendeAnnat: value
-      }));
-    } else if (name === "bil") {
-      setForm(prevForm => ({
-        ...prevForm,
-        bil: value === "true",
-      }));
-    } else {setForm(prevForm => ({
-        ...prevForm,
-        [name]: type === 'radio' ? value === "true" : value
-      }));
-    }
-  }
-
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('Form data:', form);
-    alert(`Tack! Ditt liv i ${form.ort} ligger nu ute för budgivning`)
-  }
-
-
+function Section1({ form, handleChange }) {
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Skapa ett erbjudande om livsbyte</h1>
+    <>
+      <h1>Skapa ett erbjudande om livsbyte (1)</h1>
       <h2>Först lite om dig själv</h2>
-
-      <h3>Kön:</h3>
+      <h3>Vilket kön är du?: </h3>
       <label>
         Man
         <input
@@ -111,6 +18,7 @@ function CreateOffer() {
           onChange={handleChange}
         />
       </label>
+
       <label>
         Kvinna
         <input
@@ -121,6 +29,7 @@ function CreateOffer() {
           onChange={handleChange}
         />
       </label>
+
       <label>
         Annat
         <input
@@ -131,7 +40,8 @@ function CreateOffer() {
           onChange={handleChange}
         />
       </label>
-      <h3>Ålder:</h3>
+
+      <h3>Hur gammal är du:</h3>
       <input
         type="number"
         name="ålder"
@@ -140,8 +50,17 @@ function CreateOffer() {
         min="18"
         max="120"
       />
+    </>
+  );
+}
 
-      <p>Vilket län bor du i?</p>
+
+function Section2({form, handleChange}) {
+  return (
+    <>
+      <h1>Skapa ett erbjudande om livsbyte (2)</h1>
+      <h2>Nu lite om ditt boende och din yttre livsmiljö</h2>
+      <h3>Vilket län bor du i?</h3>
       <select name="län" value={form.län} onChange={handleChange}>
         <option value="">Välj...</option>
         <option value="Blekinge">Blekinge</option>
@@ -165,13 +84,11 @@ function CreateOffer() {
         <option value="Västra Götaland">Västra Götaland</option>
         <option value="Örebro">Örebro</option>
         <option value="Östergötland">Östergötland</option>
-      </select><p>Vilken ort utspelar sig livet på:</p>
-      <input type="text"
-             name="ort"
-             value={form.ort}
-             onChange={handleChange}/>
+      </select>
 
-      <h3>Primärt boende under livsbytesperioden:</h3>
+
+
+      <h3>Primär typ av boende under livsbytesperioden:</h3>
       <label>
         Lägenhet
         <input type="radio" name="boende" value="Lägenhet" checked={form.boende === "Lägenhet"}
@@ -206,18 +123,35 @@ function CreateOffer() {
           <input type="text" name="boendeAnnat" value={form.annatBoende} onChange={handleChange}
                  placeholder="Ange boende"/>
         )}
-      </label>
+      </label>    </>
+  );
+}
 
-
-      <p>Vilken sysselsättning har du?:</p>
+function Section3({ form, handleChange }) {
+  return (
+    <>
+      <h1>Skapa ett erbjudande om livsbyte (3)</h1>
+      <h2>Nu lite om vad du fyller ditt liv med</h2>
+      <h3>Vilken sysselsättning har du?:</h3>
       <input type="text"
              name="sysselsättning"
              value={form.sysselsättning}
              onChange={handleChange}/>
 
-      <h3>Vilken typ av bostad bor du i?:</h3>
+      <h3>Vad gör du på fritiden? Skriv upp till fem fritidsintressen:</h3>
+      <input type="text"
+             name="fritidsintressen"
+             value={form.fritidsintressen}
+             onChange={handleChange}/>
+      </>
+  );
+}
 
-
+function Section4({form, handleChange}) {
+  return (
+    <>
+      <h1>Skapa ett erbjudande om livsbyte (4)</h1>
+      <h2>Nu lite om familj och relationer</h2>
       <h3>Relationsstatus</h3>
       <p>Vilket av följande passar bäst in på dig?</p>
       <label>
@@ -377,12 +311,215 @@ function CreateOffer() {
             <input
               type="text"
               name="husdjurAnnat"
-              value={form.annat}
+              value={form.husdjurAnnat}
               onChange={handleChange}
             />
           </label>
         </>
+      )}    </>
+  );
+}
+
+function Section5({ form, handleChange }) {
+  return (
+    <>
+      <h1>Skapa ett erbjudande om livsbyte (5)</h1>
+      <h2>Nu till det svåraste, att presentera ditt livserbjudande. </h2>
+      <h3>Skriv en kort, lockande presentation av dig själv och ditt liv:</h3>
+      <textarea name="presentation"
+                value={form.presentation}
+                onChange={handleChange}
+                placeholder="Skriv en presentation av livet du erbjuder!"/>
+
+      <h3>Och slutligen, skriv en lockande rubrik till din annons:</h3>
+      <input type="text"
+             name="rubrik"
+             value={form.rubrik}
+             onChange={handleChange}/>
+
+      &nbsp;
+    </>
+  );
+}
+function CreateOffer() {
+  const totalSections = 5;
+  const defaultOffer = {
+
+    rubrik: "",
+    län: "",
+    boende: "",
+    boendeAnnat: "",
+    sysselsättning: "",
+    relstatus: "",
+    partnerinfo: "",
+    husdjurHar: false,
+    husdjurHund: false,
+    husdjurKatt: false,
+    husdjurFågel: false,
+    husdjurHäst: false,
+    husdjurAnnat: "",
+    bil: "",
+    bilinfo: "",
+    barn: "",
+    fritidsintressen: "",
+    övrigt: "",
+    presentation: "",
+    ålder: "",
+    kön: "",
+  };
+
+
+  const [form, setForm] = useState(defaultOffer);
+
+  const handleChange = (event) => {
+    const {name, value, type, checked} = event.target;
+
+    if (type === 'checkbox') {
+      setForm(prevForm => ({
+        ...prevForm,
+        [name]: checked,
+      }));
+    } else if (name === "kön") {
+      setForm(prevForm => ({
+        ...prevForm,
+        kön: value,
+      }));
+    } else if (name === "ålder") {
+      if (value < 18 || value > 120) {
+        alert("Ålder måste vara mellan 18 och 120");
+      } else {
+        setForm(prevForm => ({
+          ...prevForm,
+          ålder: value,
+        }));
+      }
+    } else if (name === "husdjurAnnat") {
+      setForm(prevForm => ({
+        ...prevForm,
+        husdjurAnnat: value,
+      }));
+    } else if (name === "relstatus") {
+      setForm(prevForm => ({
+        ...prevForm,
+        relstatus: value
+      }));
+    } else if (name === "län") {
+      setForm(prevForm => ({
+        ...prevForm,
+        län: value
+      }));
+    } else if (name === "boende") {
+      setForm(prevForm => ({
+        ...prevForm,
+        boende: value
+      }));
+    } else if (name === "boendeAnnat") {
+      setForm(prevForm => ({
+        ...prevForm,
+        boendeAnnat: value
+      }));
+    } else if (name === "bil") {
+      setForm(prevForm => ({
+        ...prevForm,
+        bil: value === "true",
+      }));
+    } else {setForm(prevForm => ({
+        ...prevForm,
+        [name]: type === 'radio' ? value === "true" : value
+      }));
+    }
+  }
+
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Form data:', form);
+    alert(`Tack! Ditt liv i ${form.boende} i ${form.län}s län ligger nu ute för budgivning`)
+  }
+
+  /*function CreateOffer() {
+    // Your existing form state management code goes here*/
+
+  const [currentSection, setCurrentSection] = useState(1);
+
+   const nextSection = () => {
+    setCurrentSection(currentSection + 1);
+  };
+
+   return (
+    <form onSubmit={handleSubmit}>
+      {currentSection === 1 && <Section1 form={form} handleChange={handleChange} />}
+      {currentSection === 2 && <Section2 form={form} handleChange={handleChange} />}
+      {currentSection === 3 && <Section3 form={form} handleChange={handleChange} />}
+      {currentSection === 4 && <Section4 form={form} handleChange={handleChange} />}
+      {currentSection === 5 && <Section5 form={form} handleChange={handleChange} />}
+
+      <br />
+      <br />
+
+      {currentSection < totalSections && (
+        <button type="button" onClick={nextSection}>Continue</button>
       )}
+      {currentSection === totalSections && (
+        <>
+          <br />
+          <button type="submit">Submit</button>
+        </>
+      )}
+    </form>
+  );
+}
+
+  /*
+
+      <h3>Primärt boende under livsbytesperioden:</h3>
+      <label>
+        Lägenhet
+        <input type="radio" name="boende" value="Lägenhet" checked={form.boende === "Lägenhet"}
+               onChange={handleChange}/>
+      </label>
+      <label>
+        Villa
+        <input type="radio" name="boende" value="Villa" checked={form.boende === "Villa"} onChange={handleChange}/>
+      </label>
+      <label>
+        Gård
+        <input type="radio" name="boende" value="Gård" checked={form.boende === "Gård"} onChange={handleChange}/>
+      </label>
+      <label>
+        Sommarstuga
+        <input type="radio" name="boende" value="Sommarstuga" checked={form.boende === "Sommarstuga"}
+               onChange={handleChange}/>
+      </label>
+      <label>
+        Husvagn
+        <input type="radio" name="boende" value="Husvagn" checked={form.boende === "Husvagn"} onChange={handleChange}/>
+      </label>
+      <label>
+        Trappuppgång
+        <input type="radio" name="boende" value="Trappuppgång" checked={form.boende === "Trappuppgång"}
+               onChange={handleChange}/>
+      </label>
+      <label>
+        Annat, vilket?
+        <input type="radio" name="boende" value="Annat" checked={form.boende === "Annat"} onChange={handleChange}/>
+        {form.boende === "Annat" && (
+          <input type="text" name="boendeAnnat" value={form.annatBoende} onChange={handleChange}
+                 placeholder="Ange boende"/>
+        )}
+      </label>
+
+
+      <p>Vilken sysselsättning har du?:</p>
+      <input type="text"
+             name="sysselsättning"
+             value={form.sysselsättning}
+             onChange={handleChange}/>
+
+      <h3>Vilken typ av bostad bor du i?:</h3>
+
+
+
 
 
       <p>Har du bil?</p>
@@ -416,24 +553,12 @@ function CreateOffer() {
                  onChange={handleChange}/>
         </>
       )}
-      <h3>Presentation:</h3>
-      <textarea name="presentation"
-                value={form.presentation}
-                onChange={handleChange}
-                placeholder="Skriv en presentation av livet du erbjuder!"/>
 
-      <h3>Skriv en lockande rubrik till ditt erbjudande:</h3>
-      <input type="text"
-             name="rubrik"
-             value={form.rubrik}
-             onChange={handleChange}/>
-
-      &nbsp;
 
       <button type="submit">Submit</button>
     </form>
 
   );
 }
-
+*/
 export default CreateOffer;

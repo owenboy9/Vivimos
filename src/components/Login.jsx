@@ -41,13 +41,18 @@ function Login() {
     }))
   }
 
+  function handleLogout() {
+    setActiveUser({})
+  }
 
   return (
     <div>
       {activeUser.loggedIn ? (
         <div>
           <p>Logged in as user: {activeUser.username}</p>
+          <button onClick={handleLogout}>Log out</button>
         </div>
+        
       ) : (
         <form onSubmit={e => fetchUser(e, formData)}>
           <label>

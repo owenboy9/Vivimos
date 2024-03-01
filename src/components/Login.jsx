@@ -1,45 +1,48 @@
-
 import React, { useState, useEffect } from 'react'
 
 
 function Login() {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [role, setRole] = useState('')
 
-  useEffect(() => {
-    async function fetchData() {
+  const [formData, setFormData] = useState({
+    username: '', 
+    password: ''
+})
+
+    async function fetchUser(e, formData) {
+      e.preventDefault()
+      console.log(formData.username)
       try {
-        const response = await fetch('login.json')
+        const response = await fetch(`api/users/?username=${formData.username}&password=${formData.password}`)
         const data = await response.json()
-        console.log(data)
+        
+        if(data[0]) {
+          console.log(data, formData)
+        }
       } catch (error) {
         console.error('Error fetching mock data:', error)
       }
     }
-    fetchData()
-  }, []) // Empty dependency array to run the effect only once when the component mounts
-
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value)
+   
+  function handleChange(e) {
+    setFormData((prevFormData) => ({
+      ...prevFormData, 
+      [e.target.name] : e.target.value
+    }))
   }
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value)
-  }
 
   return (
     <div>
-      <form>
+      <form onSubmit={e => fetchUser(e, formData)}>
         <label>
           Username:
-          <input type="text" value={username} onChange={handleUsernameChange} />
         </label>
+        <input type="text" name="username" value={formData.username} onChange={e => handleChange(e)}></input>
         <br />
         <label>
           Password:
-          <input type="password" value={password} onChange={handlePasswordChange} />
         </label>
+        <input type="text" name="password" value={formData.password} onChange={e => handleChange(e)}></input>
         <br />
         <button type="submit">Login</button>
       </form>

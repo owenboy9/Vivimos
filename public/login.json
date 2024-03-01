@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "rosa_parks",
+      "email": "rosa.parks@example.com",
+      "password": "busboycott1955",
+      "role": "user"
+    },
+    {
+      "id": 2,
+      "username": "malala_yousafzai",
+      "email": "malala.yousafzai@example.com",
+      "password": "nobelpeaceprize",
+      "role": "admin"
+    },
+    {
+      "id": 3,
+      "username": "emma_watson",
+      "email": "emma.watson@example.com",
+      "password": "heforshe",
+      "role": "user"
+    },
+    {
+      "id": 4,
+      "username": "bell_hooks",
+      "email": "bell.hooks@example.com",
+      "password": "feministtheory",
+      "role": "user"
+    },
+    {
+      "id": 5,
+      "username": "sojourner_truth",
+      "email": "sojourner.truth@example.com",
+      "password": "aintiawoman",
+      "role": "admin"
+    }
+  ]
+
+}

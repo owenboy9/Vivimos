@@ -4,7 +4,7 @@ import { GlobalContext } from "../GlobalContext"
 
 function Login() {
 
-  const { loggedIn, setLoggedIn } = useContext(GlobalContext)
+  const { activeUser, setActiveUser } = useContext(GlobalContext)
 
   const [formData, setFormData] = useState({
     username: '', 
@@ -20,16 +20,19 @@ function Login() {
         
         if(data[0]) {
           console.log(data, formData)
-          setLoggedIn({
-            ...data,
+          setActiveUser({
+            ...data[0],
             loggedIn: true
           })
-          console.log(loggedIn)
         }
       } catch (error) {
         console.error('Error fetching mock data:', error)
       }
     }
+
+    useEffect(() => {
+      console.log(activeUser)
+    }, [activeUser])
    
   function handleChange(e) {
     setFormData((prevFormData) => ({
@@ -41,21 +44,28 @@ function Login() {
 
   return (
     <div>
-      <form onSubmit={e => fetchUser(e, formData)}>
-        <label>
-          Username:
-        </label>
-        <input type="text" name="username" value={formData.username} onChange={e => handleChange(e)}></input>
-        <br />
-        <label>
-          Password:
-        </label>
-        <input type="text" name="password" value={formData.password} onChange={e => handleChange(e)}></input>
-        <br />
-        <button type="submit">Login</button>
-      </form>
+      {activeUser.loggedIn ? (
+        <div>
+          <p>Logged in as user: {activeUser.username}</p>
+        </div>
+      ) : (
+        <form onSubmit={e => fetchUser(e, formData)}>
+          <label>
+            Username:
+          </label>
+          <input type="text" name="username" value={formData.username} onChange={e => handleChange(e)}></input>
+          <br />
+          <label>
+            Password:
+          </label>
+          <input type="text" name="password" value={formData.password} onChange={e => handleChange(e)}></input>
+          <br />
+          <button type="submit">Login</button>
+        </form>
+      )}
     </div>
   )
+
 }
 
 export default Login

@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import { GlobalContext } from "../GlobalContext"
 
 
 function Login() {
+
+  const { loggedIn, setLoggedIn } = useContext(GlobalContext)
 
   const [formData, setFormData] = useState({
     username: '', 
@@ -17,6 +20,11 @@ function Login() {
         
         if(data[0]) {
           console.log(data, formData)
+          setLoggedIn({
+            ...data,
+            loggedIn: true
+          })
+          console.log(loggedIn)
         }
       } catch (error) {
         console.error('Error fetching mock data:', error)

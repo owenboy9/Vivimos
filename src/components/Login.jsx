@@ -114,19 +114,20 @@ function Login() {
 async function createUser(e) {
   e.preventDefault()
   const regData = new FormData(e.target)
-  const regPost = Object.fromEntries(regData)
+  let regPost = Object.fromEntries(regData)
+  regPost = {
+    ...regPost,
+    role: "user"
+  }
   console.log(e.target, 'regData', regData, 'regPost', regPost)
   try {
-    await fetch(`api/users/`), {
+    await fetch(`api/users/`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(regPost),
-    }
-    .then((response) => response.json())
-    .then((data) => console.log('New user added:', data))
-    .catch((error) => console.error('Error adding new user:', error))
+    })
     
   } catch (error) {
     console.error('Error fetching mock data:', error)

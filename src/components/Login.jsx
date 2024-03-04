@@ -5,6 +5,7 @@ import { GlobalContext } from "../GlobalContext"
 function Login() {
 
   const { activeUser, setActiveUser } = useContext(GlobalContext)
+  const [showReg, setShowReg] = useState(false)
 
   const [formData, setFormData] = useState({
     username: '', 
@@ -43,6 +44,12 @@ function Login() {
 
   function handleLogout() {
     setActiveUser({})
+    formData = []
+  }
+
+  function handleReg() {
+    console.log('handle reg')
+    setShowReg(true)
   }
 
   return (
@@ -54,6 +61,7 @@ function Login() {
         </div>
         
       ) : (
+        <>
         <form onSubmit={e => fetchUser(e, formData)}>
           <label>
             Username:
@@ -63,14 +71,68 @@ function Login() {
           <label>
             Password:
           </label>
-          <input type="text" name="password" value={formData.password} onChange={e => handleChange(e)}></input>
+          <input type="password" name="password" value={formData.password} onChange={e => handleChange(e)}></input>
           <br />
           <button type="submit">Login</button>
+          
         </form>
+
+          {!showReg ? (
+            <button onClick={handleReg}>Register new user</button>
+          ) : (
+            <div>
+             <form onSubmit={e => createUser(e)}>
+          <label>
+            Username:
+          </label>
+          <input type="text" name="username"></input>
+          <br />
+          <label>
+            Email:
+          </label>
+          <input type="email" name="email"></input>
+          <br />
+          <label>
+            Password:
+          </label>
+          <input type="password" name="password"></input>
+          <br />
+          <button onClick={handleReg}>Register new user</button>
+        </form>
+      </div>
+
+          )} 
+          
+          </>
       )}
     </div>
   )
 
 }
+
+
+async function createUser(e) {
+  e.preventDefault()
+  const regData = new FormData(e.target)
+  const regPost = Object.fromEntries(regData)
+  console.log(e.target, 'regData', regData, 'regPost', regPost)
+  try {
+    await fetch(`api/users/`), {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(regPost),
+    }
+    .then((response) => response.json())
+    .then((data) => console.log('New user added:', data))
+    .catch((error) => console.error('Error adding new user:', error))
+    
+  } catch (error) {
+    console.error('Error fetching mock data:', error)
+  }
+}
+
+
 
 export default Login

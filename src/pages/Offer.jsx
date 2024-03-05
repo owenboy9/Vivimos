@@ -577,9 +577,16 @@ function CreateOffer() {
 
   const [currentSection, setCurrentSection] = useState(1);
 
-   const nextSection = () => {
+  const prevSection = () => {
+    if (currentSection > 1) {
+      setCurrentSection(currentSection - 1);
+    }
+  };
+  const nextSection = () => {
     setCurrentSection(currentSection + 1);
   };
+
+
 
    return (
     <form onSubmit={handleSubmit}>
@@ -592,9 +599,15 @@ function CreateOffer() {
       <br />
       <br />
 
+      {currentSection > 1 && (
+        <button type="button" onClick={prevSection}>Previous</button>
+      )}
+
       {currentSection < totalSections && (
         <button type="button" onClick={nextSection}>Continue</button>
       )}
+
+
       {currentSection === totalSections && (
         <>
           <br />

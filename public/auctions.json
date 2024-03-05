@@ -4,33 +4,33 @@
       "id": "1",
       "userId": "1",
       "username": "david",
-      "title": " ",
-      "description": "Jag är en 28-årig fotograf som vill byta liv med någon i Stockholm för en vecka. Jag bor nära havet och älskar friluftsliv.",
-      "startDate": "2024-04-01 " 
+      "title": "Fotograf från Stockholm med passion för naturen",
+      "description": "Jag är en 28-årig fotograf som bor nära havet i Stockholm. Jag älskar att fånga naturens skönhet genom min kamera och spendera tid utomhus.",
+      "startDate": "2024-04-01" 
     },
     {
       "id": "2",
       "userId": "2",
       "username": "emma",
-      "title": "Upplev landsbygden i Dalarna",
-      "description": "Jag är en 35-årig konstkurator som vill uppleva livet på landsbygden i Dalarna. Jag älskar yoga och meditation. Finns det någon som vill byta liv för en vecka?",
-      "startDate": "2024-04-01 "
+      "title": "Konstkurator med passion för yoga - Dalarna",
+      "description": "Jag är en 35-årig konstkurator som brinner för konst och meditation. Jag finner lugn och frid på landsbygden i Dalarna, där jag kan fördjupa min yogapraktik och inspireras av naturen.",
+      "startDate": "2024-04-01"
     },
     {
       "id": "3",
-      "userId": "1",
-      "username": "",
-      "title": " ",
-      "description": " ",
-      "startDate": " "
+      "userId": "3",
+      "username": "Ali",
+      "title": "Kock som älskar mat och bio - Göteborg",
+      "description": "Jag är en 40-årig kock från Göteborg. Mitt hjärta slår för matlagning och film. Jag älskar att utforska stadens restauranger och biografer. ",
+      "startDate": "2024-04-02"
     },
     {
       "id": "4",
-      "userId": "1",
-      "username": "",
-      "title": " ",
-      "description": " ",
-      "startDate": " "
+      "userId": "4",
+      "username": "sofia",
+      "title": "Dans och musik i Stockholm",
+      "description": "Jag är Sofía, en 25-årig dansinstruktör med en passion för att utforska olika kulturer genom dans. Mitt hjärta klappar för att inspirera andra genom min dans och älskar nattlivet i Stockholm. ",
+      "startDate": "2024-04-03 "
     },
     {
       "id": "5",

@@ -607,7 +607,6 @@ function CreateOffer() {
         <button type="button" onClick={nextSection}>Continue</button>
       )}
 
-
       {currentSection === totalSections && (
         <>
           <br />

@@ -3,35 +3,50 @@
     {
       "id": "1",
       "userId": "1",
+      "username": "david",
       "title": " ",
-      "description": " ",
-      "startDate": " ",
-      "endDate": " "
-      
+      "description": "Jag är en 28-årig fotograf som vill byta liv med någon i Stockholm för en vecka. Jag bor nära havet och älskar friluftsliv.",
+      "startDate": "2024-04-01 " 
     },
     {
       "id": "2",
-      "userId": "1",
-      "title": " ",
-      "description": " ",
-      "startDate": " ",
-      "endDate": " "
+      "userId": "2",
+      "username": "emma",
+      "title": "Upplev landsbygden i Dalarna",
+      "description": "Jag är en 35-årig konstkurator som vill uppleva livet på landsbygden i Dalarna. Jag älskar yoga och meditation. Finns det någon som vill byta liv för en vecka?",
+      "startDate": "2024-04-01 "
     },
     {
       "id": "3",
       "userId": "1",
+      "username": "",
       "title": " ",
       "description": " ",
-      "startDate": " ",
-      "endDate": " "
+      "startDate": " "
     },
     {
       "id": "4",
       "userId": "1",
+      "username": "",
       "title": " ",
       "description": " ",
-      "startDate": " ",
-      "endDate": " "
+      "startDate": " "
+    },
+    {
+      "id": "5",
+      "userId": "1",
+      "username": "",
+      "title": " ",
+      "description": " ",
+      "startDate": " "
+    },
+    {
+      "id": "6",
+      "userId": "1",
+      "username": "",
+      "title": " ",
+      "description": " ",
+      "startDate": " "
     }
   ]
 }

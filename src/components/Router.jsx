@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Nav from "./Nav.jsx"
 import Home from "../pages/Home.jsx"
-import Login from "./Login.jsx"
+import Test from '../pages/Test.jsx'
+import Layout from "./Layout.jsx"
 // import Header from "./Header.jsx"
 
 
@@ -10,16 +10,15 @@ function Router() {
 
   return (
     <BrowserRouter>
-
-      <Nav />
+      <Layout>
+      
       <Routes>
         {/*<Route path="/" element={<Header />} />*/}
         
         <Route path="/" element={<Home />} /> {/*kan va självstängande element om det inte händer något mellan taggarna*/}
-        <Route path="/login" element={<Login />} /> {/*kan va självstängande element om det inte händer något mellan taggarna*/}
-
-
+        <Route path="/test" element={<Test />} />
       </Routes>
+      </Layout>
     </BrowserRouter>
   )
 

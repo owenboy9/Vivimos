@@ -1,0 +1,14 @@
+nav {
+  display: block;
+  margin: 20px auto;
+  font-size: 1.5rem;
+  width: 50%;
+  text-align: center;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}

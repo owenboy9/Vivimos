@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { GlobalContext } from "../GlobalContext"
+import '../assets/styles/login.css'
 
 
 function Login() {
@@ -54,7 +55,7 @@ function Login() {
   }
 
   return (
-    <div>
+    <div className='login-container'>
       {activeUser.loggedIn ? (
         <div>
           <p>Logged in as user: {activeUser.username}</p>
@@ -62,7 +63,7 @@ function Login() {
         </div>
         
       ) : (
-        <>
+        <div className='login-form'>
         <form onSubmit={e => fetchUser(e, formData)}>
           <label>
             Username:
@@ -104,7 +105,7 @@ function Login() {
 
           )} 
           
-          </>
+          </div>
       )}
     </div>
   )

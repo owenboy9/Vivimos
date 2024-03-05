@@ -1,38 +1,37 @@
 {
-  "Auctions": [
+  "auctions": [
     {
-      "Id": "1",
-      "UserId": "1",
-      "Title": " ",
-      "Descriptio": " ",
-      "StartDate": " ",
-      "EndDate": " "
+      "id": "1",
+      "userId": "1",
+      "title": " ",
+      "description": " ",
+      "startDate": " ",
+      "endDate": " "
       
     },
     {
-      "Id": "2",
-      "UserId": "1",
-      "Title": " ",
-      "Descriptio": " ",
-      "StartDate": " ",
-      "EndDate": " "
+      "id": "2",
+      "userId": "1",
+      "title": " ",
+      "description": " ",
+      "startDate": " ",
+      "endDate": " "
     },
     {
-      "Id": "3",
-      "UserId": "1",
-      "Title": " ",
-      "Description": " ",
-      "StartDate": " ",
-      "EndDate": " "
+      "id": "3",
+      "userId": "1",
+      "title": " ",
+      "description": " ",
+      "startDate": " ",
+      "endDate": " "
     },
     {
-      "Id": "4",
-      "UserId": "1",
-      "Title": " ",
-      "Descriptio": " ",
-      "StartDate": " ",
-      "EndDate": " "
+      "id": "4",
+      "userId": "1",
+      "title": " ",
+      "description": " ",
+      "startDate": " ",
+      "endDate": " "
     }
-
   ]
 }

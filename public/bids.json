@@ -1,14 +1,14 @@
 {
-  "Bids": [
+  "bids": [
     {
-      "Id": "1",
-      "AuctionId": "1",
-      "BidderId": "1",
-      "Date": "29-02-2024"
+      "id": "1",
+      "auctionId": "1",
+      "bidderId": "1",
+      "date": "29-02-2024"
     },
     {
-      "Id": "2",
-      "AuctionId": "3",
+      "id": "2",
+      "auctionId": "3",
       "BidderId": "4",
       "Date": "29-02-2024"
     }

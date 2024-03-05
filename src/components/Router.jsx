@@ -14,7 +14,7 @@ function Router() {
         {/*Our route definitions(controller)*/}
 
         <Route path="/" element={<Home />} /> {/*kan va självstängande element om det inte händer något mellan taggarna*/}
-
+        
       </Routes>
     </BrowserRouter>
   )

@@ -1,10 +1,40 @@
  { 
-  "User": [
+  "Users": [
     {
       "userId": "1",
       "username": "david",
       "password": "abc123",
       "email": "david@abc.com"
-    }
-  ]
+    },
+      {
+        "userId": "2",
+        "username": "emma",
+        "password": "123abc",
+        "email": "emma@abc.com"
+      },
+        {
+          "userId": "3",
+          "username": "ali",
+          "password": "cdf456",
+          "email": "ali@abc.com"
+        },
+            {
+              "userId": "4",
+              "username": "sofia",
+              "password": "456cdf",
+              "email": "sofia@abc.com"
+            },
+                {
+                  "userId": "5",
+                  "username": "johan",
+                  "password": "ghi789",
+                  "email": "johan@abc.com"
+                },
+                    {
+                      "userId": "6",
+                      "username": "maria",
+                      "password": "789ghi",
+                      "email": "maria@abc.com"
+                    }
+                  ]
 }

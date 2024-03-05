@@ -4,7 +4,7 @@
       "id": "1",
       "username": "rosa_parks",
       "email": "rosa.parks@example.com",
-      "password": "busboycott1955",
+      "password": "bus",
       "role": "user"
     },
     {
@@ -46,6 +46,13 @@
       "username": "aaga",
       "email": "erik.cronqvist@gmail.com",
       "password": "gagaga",
+      "role": "user"
+    },
+    {
+      "id": "e712",
+      "username": "bauta",
+      "email": "efeo@geo.com",
+      "password": "oioioioi",
       "role": "user"
     }
   ]

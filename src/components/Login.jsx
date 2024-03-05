@@ -44,6 +44,7 @@ function Login() {
 
   function handleLogout() {
     setActiveUser({})
+    setShowReg(false)
     formData = []
   }
 
@@ -77,7 +78,7 @@ function Login() {
           
         </form>
 
-          {!showReg ? (
+          {!showReg && !activeUser.loggedIn ? (
             <button onClick={handleReg}>Register new user</button>
           ) : (
             <div>

@@ -27,13 +27,23 @@ function handleButtonClick(e) {
   else if (e.target.value === 'register') {
     setRegOpen(true)
   }
+  else if (e.target.value === 'logout') {
+    setActiveUser({})
+  }
   
 }
 
 return (
+ 
   <div className='login-container'>
+     { !activeUser.loggedIn ? (
+    <>  
     <button value='login' onClick={ handleButtonClick }> Logga in</button>
     <button value='register' onClick={ handleButtonClick }>Registera dig</button>
+    </>
+  ) : (
+    <button value='logout' onClick={ handleButtonClick }> Logga ut</button>
+  )}
     
     { modalOpen && loginOpen && (
       createPortal(
@@ -75,7 +85,7 @@ return (
         </label>
         <input type="password" name="password"></input>
         <br />
-        <button onClick={handleReg}>Registrera</button>
+        <button onClick={ handleReg }>Registrera</button>
       </form>
       </Modal>
     )}
@@ -99,12 +109,14 @@ return (
   function handleLogout() {
     setActiveUser({})
     setShowReg(false)
+    setModalOpen(false)
     formData = []
   }
 
   function handleReg() {
     console.log('handle reg')
     setShowReg(true)
+    setModalOpen(false)
   }
 
   async function fetchUser(e, formData) {
@@ -123,6 +135,8 @@ return (
       }
     } catch (error) {
       console.error('Error fetching mock data:', error)
+    } finally {
+      setModalOpen(false)
     }
   }
   
@@ -150,13 +164,11 @@ return (
       
     } catch (error) {
       console.error('Error fetching mock data:', error)
+    } finally {
+      setModalOpen(false)
     }
   
   }
-
-
-
-
 
 }
 

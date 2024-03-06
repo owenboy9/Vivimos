@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { GlobalContext } from "../GlobalContext"
 import '../assets/styles/login.css'
+import { createPortal } from "react-dom"
 import Modal from './Modal.jsx'
 
 
@@ -35,6 +36,7 @@ return (
     <button value='register' onClick={ handleButtonClick }>Registera dig</button>
     
     { modalOpen && loginOpen && (
+      createPortal(
       <Modal>
         <p>Logga in</p>
         <form onSubmit={e => fetchUser(e, formData)}>
@@ -50,7 +52,8 @@ return (
         <br />
         <button type="submit">Login</button>  
         </form>
-      </Modal>
+      </Modal>, document.body
+      )
     )}
 
     { modalOpen && regOpen && (

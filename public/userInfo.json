@@ -9,9 +9,112 @@
       "Age": 28,
       "Gender": "Male",
       "City": "Gothenburg",
-      "Interests": "Fotografering","Surfing","Friluftsliv",
+      "Interests": ["Fotografering","Surfing","Friluftsliv"],
       "Work": "Fotograf och surfinstruktör",
       "Schedule": "Flexibla arbetstider",
       "Lifestyle": "Vegan",
       "StartDate": "2024-04-01"
     }
+  },
+  {
+    "userId": "2",
+    "username": "emma",
+      "password": "123abc",
+      "email": "emma@abc.com",
+      "userInfo": {
+        "Name": "Emma Karlsson",
+        "Age": 35,
+        "Gender": "Female",
+        "City": "Borlänge",
+        "Interests": [
+          "Yoga",
+          "Meditation",
+          "Konst"
+        ],
+        "Work": "Konstkurator",
+        "Schedule": "Vanliga kontorstider",
+        "Lifestyle": "Vegetarian",
+        "StartDate": "2024-05-15"
+      }
+    },
+    {
+      "userId": "3",
+      "username": "ali",
+      "password": "cdf456",
+      "email": "ali@abc.com",
+      "userInfo": {
+        "Name": "Ali Khan",
+        "Age": 40,
+        "Gender": "Male",
+        "City": "Göteborg",
+        "Interests": [
+          "Fotboll",
+          "Matlagning",
+          "Film"
+        ],
+        "Work": "Kock på restaurang",
+        "Schedule": "Kvällsskift",
+        "Lifestyle": "Köttätare",
+        "StartDate": "2024-06-10"
+      }
+    },
+    {
+      "userId": "4",
+      "username": "sofia",
+      "password": "456cdf",
+      "email": "sofia@abc.com",
+      "userInfo": {
+        "Name": "Sofia Lindgren",
+        "Age": 25,
+        "Gender": "Female",
+        "City": "Stockholm",
+        "Interests": [
+          "Musik",
+          "Dans",
+          "Resor"
+        ],
+        "Work": "Dansinstruktör",
+        "Schedule": "Varierande arbetstider",
+        "Lifestyle": "Flexibel kost",
+        "StartDate": "2024-07-20"
+      }
+    },
+    {
+      "userId": "5",
+      "username": "johan",
+      "password": "ghi789",
+      "email": "johan@abc.com",
+      "userInfo": {
+        "Name": "Johan Andersson",
+        "Age": 45,
+        "Gender": "Male",
+        "City": "Malmö",
+        "Interests": [
+          "Trädgårdsarbete",
+          "Golf",
+          "Läsning"
+        ],
+        "Work": "Trädgårdsmästare",
+        "Schedule": "Dagtidsskift",
+        "Lifestyle": "Köttätare",
+        "StartDate": "2024-08-15"
+      }
+    },
+    {
+      "userId": "6",
+      "username": "maria",
+      "password": "789ghi",
+      "email": "maria@abc.com",
+      "userInfo": {
+        "Name": "Maria Svensson",
+        "Age": 30,
+        "Gender": "Female",
+        "City": "Östersund",
+        "Interests": ["Skidåkning","Bakning","Fotografering"],
+        "Work": "Fotograf och bagerska",
+        "Schedule": "Flexibla arbetstider",
+        "Lifestyle": "Flexibel kost",
+        "StartDate": "2024-09-01"
+      }
+    }
+  ]

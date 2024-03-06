@@ -536,17 +536,17 @@ function CreateOffer() {
     } else if (name === "ålder") {
       const numValue = parseInt(value, 10);
       if (isNaN(numValue) || numValue < 18 || numValue > 120) {
-        alert("Ålder måste vara ett nummer mellan 18 och 120");
+        alert("Ålder måste vara mellan 18 och 120");
       } else {
         setForm(prevForm => ({
           ...prevForm,
-          ålder: value, // Keep it as string
+          ålder: value,
         }));
       }
     } else if (name === "barnAntal") {
       setForm(prevForm => ({
         ...prevForm,
-        [name]: value, // No need to parse to number, keep it as string
+        [name]: value,
       }));
 
     } else if (name === "boendeAnnat" || name === "bilinfo" || name === "partnerinfo" || name === "fritidsintressen" || name === "presentation" || name === "rubrik") {
@@ -567,12 +567,6 @@ function CreateOffer() {
     }
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('Form data:', form);
-    alert(`Tack! Ditt liv i ${form.boende} i ${form.län}s län ligger nu ute för budgivning`)
-  }
-
 
 
   const [currentSection, setCurrentSection] = useState(1);
@@ -587,35 +581,54 @@ function CreateOffer() {
   };
 
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log('Form data:', form);
+    alert(`Tack! Ditt liv i ${form.boende} i ${form.län}s län ligger nu ute för budgivning`)
 
-   return (
-    <form onSubmit={handleSubmit}>
-      {currentSection === 1 && <Section1 form={form} handleChange={handleChange} />}
-      {currentSection === 2 && <Section2 form={form} handleChange={handleChange} />}
-      {currentSection === 3 && <Section3 form={form} handleChange={handleChange} />}
-      {currentSection === 4 && <Section4 form={form} handleChange={handleChange} />}
-      {currentSection === 5 && <Section5 form={form} handleChange={handleChange} />}
 
-      <br />
-      <br />
+  const response = await fetch('/api/ads', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(form),
+  });
 
-      {currentSection > 1 && (
-        <button type="button" onClick={prevSection}>Previous</button>
-      )}
+  if (response.ok) {
+    console.log('Data saved successfully');
+  } else {
+    console.error('Error saving data');
+  }
+};
 
-      {currentSection < totalSections && (
-        <button type="button" onClick={nextSection}>Continue</button>
-      )}
+return (
+  <form onSubmit={handleSubmit}>
+    {currentSection === 1 && <Section1 form={form} handleChange={handleChange}/>}
+    {currentSection === 2 && <Section2 form={form} handleChange={handleChange}/>}
+    {currentSection === 3 && <Section3 form={form} handleChange={handleChange}/>}
+    {currentSection === 4 && <Section4 form={form} handleChange={handleChange}/>}
+    {currentSection === 5 && <Section5 form={form} handleChange={handleChange}/>}
 
-      {currentSection === totalSections && (
-        <>
-          <br />
-          <button type="submit">Submit</button>
-        </>
-      )}
-    </form>
-  );
+    <br/>
+    <br/>
+
+    {currentSection > 1 && (
+      <button type="button" onClick={prevSection}>Previous</button>
+    )}
+
+    {currentSection < totalSections && (
+      <button type="button" onClick={nextSection}>Continue</button>
+    )}
+
+    {currentSection === totalSections && (
+      <>
+        <br/>
+        <button type="submit">Submit</button>
+      </>
+    )}
+  </form>
+);
 }
-
 
 export default CreateOffer;

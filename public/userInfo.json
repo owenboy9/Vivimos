@@ -26,11 +26,7 @@
         "Age": 35,
         "Gender": "Female",
         "City": "Borlänge",
-        "Interests": [
-          "Yoga",
-          "Meditation",
-          "Konst"
-        ],
+        "Interests": ["Yoga","Meditation","Konst"],
         "Work": "Konstkurator",
         "Schedule": "Vanliga kontorstider",
         "Lifestyle": "Vegetarian",
@@ -47,11 +43,7 @@
         "Age": 40,
         "Gender": "Male",
         "City": "Göteborg",
-        "Interests": [
-          "Fotboll",
-          "Matlagning",
-          "Film"
-        ],
+        "Interests": ["Fotboll","Matlagning","Film"],
         "Work": "Kock på restaurang",
         "Schedule": "Kvällsskift",
         "Lifestyle": "Köttätare",
@@ -68,11 +60,7 @@
         "Age": 25,
         "Gender": "Female",
         "City": "Stockholm",
-        "Interests": [
-          "Musik",
-          "Dans",
-          "Resor"
-        ],
+        "Interests": ["Musik","Dans","Resor"],
         "Work": "Dansinstruktör",
         "Schedule": "Varierande arbetstider",
         "Lifestyle": "Flexibel kost",
@@ -89,11 +77,7 @@
         "Age": 45,
         "Gender": "Male",
         "City": "Malmö",
-        "Interests": [
-          "Trädgårdsarbete",
-          "Golf",
-          "Läsning"
-        ],
+        "Interests": ["Trädgårdsarbete","Golf","Läsning"],
         "Work": "Trädgårdsmästare",
         "Schedule": "Dagtidsskift",
         "Lifestyle": "Köttätare",

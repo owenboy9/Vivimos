@@ -38,15 +38,15 @@ return (
     { modalOpen && loginOpen && (
       createPortal(
       <Modal>
-        <p>Logga in</p>
+        <h2>Logga in</h2>
         <form onSubmit={e => fetchUser(e, formData)}>
         <label>
-          Username:
+          Användarnamn:
         </label>
         <input type="text" name="username" value={formData.username} onChange={e => handleChange(e)}></input>
         <br />
         <label>
-          Password:
+          Lösenord:
         </label>
         <input type="password" name="password" value={formData.password} onChange={e => handleChange(e)}></input>
         <br />
@@ -58,10 +58,10 @@ return (
 
     { modalOpen && regOpen && (
       <Modal>
-        <p>Registrera</p>
+        <h2>Registrera ny användare</h2>
         <form onSubmit={e => createUser(e)}>
         <label>
-          Username:
+          Användarnamn:
         </label>
         <input type="text" name="username"></input>
         <br />
@@ -71,11 +71,11 @@ return (
         <input type="email" name="email"></input>
         <br />
         <label>
-          Password:
+          Lösenord:
         </label>
         <input type="password" name="password"></input>
         <br />
-        <button onClick={handleReg}>Register new user</button>
+        <button onClick={handleReg}>Registrera</button>
       </form>
       </Modal>
     )}

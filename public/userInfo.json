@@ -1,0 +1,17 @@
+[
+  {
+    "userId": "1",
+    "username": "david",
+    "password": "abc123",
+    "email": "david@abc.com",
+    "userInfo": {
+      "Name": "David Andersson",
+      "Age": 28,
+      "Gender": "Male",
+      "City": "Gothenburg",
+      "Interests": "Fotografering","Surfing","Friluftsliv",
+      "Work": "Fotograf och surfinstruktör",
+      "Schedule": "Flexibla arbetstider",
+      "Lifestyle": "Vegan",
+      "StartDate": "2024-04-01"
+    }

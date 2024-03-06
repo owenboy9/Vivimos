@@ -10,8 +10,7 @@ function Router() {
 
   return (
     <BrowserRouter>
-      <Layout>
-      
+      <Layout> 
       <Routes>
         {/*<Route path="/" element={<Header />} />*/}
         

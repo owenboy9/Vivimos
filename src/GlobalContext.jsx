@@ -6,8 +6,19 @@ function GlobalProvider({ children }) {
     const [ads, setAds] = useState(["Mock1", "Mock2"])
     const [user, setUser] = useState([])
     const [activeUser, setActiveUser] = useState({})
+    const [modalOpen, setModalOpen] = useState(false)
 
-    return <GlobalContext.Provider value={{ ads, setAds, user, setUser, activeUser, setActiveUser }}>
+    const [ loginOpen, setLoginOpen ] = useState(false)
+    const [ regOpen, setRegOpen ] = useState(false)
+
+    return <GlobalContext.Provider value={{ 
+      ads, setAds, 
+      user, setUser, 
+      activeUser, setActiveUser, 
+      modalOpen, setModalOpen,
+      loginOpen, setLoginOpen,
+      regOpen, setRegOpen
+       }}>
         {children}
     </GlobalContext.Provider>
 }

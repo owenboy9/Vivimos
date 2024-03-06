@@ -4,7 +4,7 @@ import '../assets/styles/nav.css'
 function Nav() {
 
   return <nav>
-    <Link to="/">Home</Link> &nbsp;
+    <Link to="/">Hem</Link> &nbsp;
     <Link to="/Test">Test</Link> &nbsp;
 
   </nav>

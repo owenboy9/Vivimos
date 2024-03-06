@@ -1,0 +1,14 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  padding: 2rem;
+  box-shadow: 0 2px 2px;
+}
+
+.modal-header {
+  cursor: pointer;
+}

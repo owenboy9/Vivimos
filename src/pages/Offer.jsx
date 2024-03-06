@@ -584,8 +584,12 @@ function CreateOffer() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log('Form data:', form);
-    alert(`Tack! Ditt liv i ${form.boende} i ${form.län}s län ligger nu ute för budgivning`)
 
+    // Om Formdata ska användas lägg in:
+    // const data = new FormData(event.target);
+
+    // Och konvertera till objekt.
+    // const info = Object.fromEntries(data);
 
   const response = await fetch('/api/ads', {
     method: 'POST',
@@ -593,14 +597,17 @@ function CreateOffer() {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(form),
+    // body: JSON.stringify(info), ifall formdata
+
   });
 
   if (response.ok) {
-    console.log('Data saved successfully');
-  } else {
-    console.error('Error saving data');
-  }
-};
+      console.log('Data saved successfully');
+      alert(`Tack! Ditt liv i ${form.boende} i ${form.län}s län ligger nu ute för budgivning`)
+    } else {
+      console.error('Error saving data');
+    }
+  };
 
 return (
   <form onSubmit={handleSubmit}>

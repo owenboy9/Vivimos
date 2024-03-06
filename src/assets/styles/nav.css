@@ -1,0 +1,14 @@
+nav {
+  display: block;
+  margin: 20px auto;
+  font-size: 1.2rem;
+  width: 50%;
+  background-color: rgb(244, 244, 244);
+  text-align: center;
+  font-family: sans-serif;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}

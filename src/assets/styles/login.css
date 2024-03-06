@@ -1,0 +1,19 @@
+.login-container {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+}
+
+.login-form {
+  display: inline;
+}
+
+
+input {
+  margin-right: 10px;
+}
+
+button {
+  margin-right: 10px;
+}

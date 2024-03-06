@@ -12,7 +12,7 @@ function Nav() {
     <Link to="/">Hem</Link> &nbsp;
     <Link to="/Test">Test</Link> &nbsp;
     { activeUser.loggedIn && (
-      <Link to='/UserPage'>Min sida</Link>
+      <Link to={`/user/${activeUser.username}`}>Min sida</Link>
     )}
   </nav>
 }

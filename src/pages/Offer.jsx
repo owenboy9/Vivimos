@@ -1,10 +1,16 @@
-import { useState } from "react";
+import React, { useState, useContext } from 'react'
+import { GlobalContext } from "../GlobalContext"
+import { useNavigate } from "react-router-dom"
+
+
 
 
 
 function Section1({ form, handleChange }) {
+
+
   return (
-    <>
+      <>
       <h1>Skapa ett erbjudande om livsbyte (1)</h1>
       <h2>Först lite om dig själv</h2>
       <h3>Vilket kön är du?: </h3>
@@ -50,9 +56,9 @@ function Section1({ form, handleChange }) {
         min="18"
         max="120"
       />
-    </>
-  );
-}
+      </>
+    )
+  }
 
 
 function Section2({form, handleChange}) {
@@ -452,7 +458,7 @@ function Section4({form, handleChange}) {
           </label>
         </>
       )}    </>
-  );
+  )
 }
 
 function Section5({form, handleChange}) {
@@ -477,6 +483,8 @@ function Section5({form, handleChange}) {
   );
 }
 function CreateOffer() {
+  const navigate = useNavigate()
+
   const totalSections = 5;
   const defaultOffer = {
 
@@ -584,8 +592,12 @@ function CreateOffer() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log('Form data:', form);
-    alert(`Tack! Ditt liv i ${form.boende} i ${form.län}s län ligger nu ute för budgivning`)
 
+    // Om Formdata ska användas lägg in:
+    // const data = new FormData(event.target);
+
+    // Och konvertera till objekt.
+    // const info = Object.fromEntries(data);
 
   const response = await fetch('/api/ads', {
     method: 'POST',
@@ -593,14 +605,18 @@ function CreateOffer() {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(form),
+    // body: JSON.stringify(info), ifall formdata
+
   });
 
   if (response.ok) {
-    console.log('Data saved successfully');
-  } else {
-    console.error('Error saving data');
-  }
-};
+      console.log('Data saved successfully');
+      alert(`Tack! Ditt liv i ${form.boende} i ${form.län}s län ligger nu ute för budgivning`)
+      navigate('/')
+    } else {
+      console.error('Error saving data');
+    }
+  };
 
 return (
   <form onSubmit={handleSubmit}>

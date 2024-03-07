@@ -13,10 +13,10 @@ function Nav() {
 
     <Link to="/">Hem</Link> &nbsp;
     <Link to="/Test">Test</Link> &nbsp;
+    <Link to="/createOffer">Skapa annons</Link>
     { activeUser.loggedIn && (
       <>
       <Link to='/user/'>Min sida</Link> &nbsp;
-      <Link to="/createOffer">Skapa annons</Link>
       </>
     )}
   </nav>

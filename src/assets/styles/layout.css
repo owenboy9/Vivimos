@@ -1,7 +1,8 @@
 .page-container {
   width: 60vw;
   margin: auto;
-  background-color: antiquewhite;
-  padding: 1rem;
+  background-color: rgb(198, 198, 198);
+  padding: 2rem;
   overflow: scroll;
+  min-height: 100vh;
 }

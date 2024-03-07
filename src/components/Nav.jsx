@@ -9,7 +9,7 @@ function Nav() {
   const { activeUser, setActiveUser } = useContext(GlobalContext)
 
   return <nav>
-    <Link to="/createOffer">Skapa annons test</Link> |&nbsp;
+    <Link to="/createOffer">Skapa annons </Link> |&nbsp;
 
     <Link to="/">Hem</Link> &nbsp;
     <Link to="/Test">Test</Link> &nbsp;

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom"
 
 
 
@@ -477,6 +478,8 @@ function Section5({form, handleChange}) {
   );
 }
 function CreateOffer() {
+  const navigateBack = useNavigate()
+
   const totalSections = 5;
   const defaultOffer = {
 
@@ -604,6 +607,7 @@ function CreateOffer() {
   if (response.ok) {
       console.log('Data saved successfully');
       alert(`Tack! Ditt liv i ${form.boende} i ${form.län}s län ligger nu ute för budgivning`)
+      navigateBack.push('/')
     } else {
       console.error('Error saving data');
     }

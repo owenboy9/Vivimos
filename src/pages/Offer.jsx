@@ -4,13 +4,10 @@ import { useNavigate } from "react-router-dom"
 
 
 
-
-
 function Section1({ form, handleChange }) {
-
-
+  
   return (
-      <>
+    <>
       <h1>Skapa ett erbjudande om livsbyte (1)</h1>
       <h2>Först lite om dig själv</h2>
       <h3>Vilket kön är du?: </h3>
@@ -56,9 +53,9 @@ function Section1({ form, handleChange }) {
         min="18"
         max="120"
       />
-      </>
-    )
-  }
+    </>
+  );
+}
 
 
 function Section2({form, handleChange}) {
@@ -458,7 +455,7 @@ function Section4({form, handleChange}) {
           </label>
         </>
       )}    </>
-  )
+  );
 }
 
 function Section5({form, handleChange}) {

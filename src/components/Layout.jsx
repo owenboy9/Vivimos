@@ -11,7 +11,7 @@ function Layout({children}) {
       <div className='page-container'>
 
         {children}
-        <AdList />
+
       </div>
       <Footer />
     </>

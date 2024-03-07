@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { GlobalContext } from "../GlobalContext"
+import AdList from "../components/AdList"
 
 
 function Home() {
@@ -11,6 +12,8 @@ function Home() {
     <>
     <h1>Hej detta är starten</h1>
       {ads.map(ad => <p>{ad}</p>)}
+
+    <AdList />
     </>
   );
 }

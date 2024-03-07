@@ -9,10 +9,15 @@ function Nav() {
   const { activeUser, setActiveUser } = useContext(GlobalContext)
 
   return <nav>
+    
+
     <Link to="/">Hem</Link> &nbsp;
     <Link to="/Test">Test</Link> &nbsp;
     { activeUser.loggedIn && (
-      <Link to={`/user/${activeUser.username}`}>Min sida</Link>
+      <>
+      <Link to='/user/'>Min sida</Link> &nbsp;
+      <Link to="/createOffer">Skapa annons</Link>
+      </>
     )}
   </nav>
 }

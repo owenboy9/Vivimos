@@ -54,6 +54,46 @@
       "email": "efeo@geo.com",
       "password": "oioioioi",
       "role": "user"
+    },
+    {
+      "id": "ad58",
+      "username": "micke",
+      "email": "mikaelfant@gmail.com",
+      "password": "123",
+      "role": "user"
+    }
+  ],
+  "ads": [
+    {
+      "id": "f1d9",
+      "rubrik": "Frihet & fantasi",
+      "län": "Halland",
+      "boende": "Lägenhet",
+      "boendeAnnat": "",
+      "sysselsättning": "Mellanchef",
+      "relstatus": "ensamvarg",
+      "partnerinfo": "",
+      "barnAntal": "",
+      "barnBoende": "",
+      "husdjurHar": true,
+      "husdjurHund": false,
+      "husdjurKatt": true,
+      "husdjurFågel": false,
+      "husdjurHäst": false,
+      "husdjurAnnat": "Gris",
+      "stad": "Mellanstor stad",
+      "stadAlternativ": "",
+      "boendeSkog": false,
+      "boendeHav": false,
+      "boendeKultur": false,
+      "boendeShopping": true,
+      "bil": true,
+      "bilinfo": "Ford Taunus",
+      "barn": false,
+      "fritidsintressen": "",
+      "presentation": "Tjolahopp",
+      "ålder": "18",
+      "kön": "Man"
     }
   ]
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 function AdList() {
   const [items, setItems] = useState([])
   useEffect(() => {
@@ -21,16 +21,14 @@ function AdList() {
 }
 
 function ItemCard(ad) {
-  const { rubrik, kön, ålder, stad, län, sysselsättning } = ad;
+  const { id, rubrik, kön, ålder, stad, län, sysselsättning } = ad;
   return (
-    <li key={rubrik}>
-      <h3>{rubrik}</h3>
-      <p>En {ålder} år gammal {kön.toLowerCase()}, från {län} <br/> som är {sysselsättning.toLowerCase()} och bor i {stad.toLowerCase()}</p>
-
+    <li key={id}>
+      <h3><Link to={`/ad/${id}`}>{rubrik}</Link></h3>
+      <p>En {ålder} år gammal {kön.toLowerCase()}, från {län} <br/> som är {sysselsättning.toLowerCase()} och bor i {stad.toLowerCase()}.</p>
     </li>
   );
 }
-
 
 
 

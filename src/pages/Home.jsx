@@ -5,14 +5,11 @@ import AdList from "../components/AdList"
 
 function Home() {
 
-  const { ads, setAds } = useContext(GlobalContext)
-  console.log(ads)
+  //const { ads, setAds } = useContext(GlobalContext)
+  //console.log(ads)
 
   return (
     <>
-    <h1>Hej detta är starten</h1>
-      {ads.map(ad => <p>{ad}</p>)}
-
     <AdList />
     </>
   );

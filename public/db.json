@@ -160,7 +160,7 @@
     {
       "id": "ee84",
       "rubrik": "Zombielycka",
-      "län": "",
+      "län": "Blekinge",
       "boende": "Villa",
       "boendeAnnat": "",
       "sysselsättning": "Hemmafru",
@@ -191,7 +191,7 @@
     {
       "id": "2563",
       "rubrik": "Gatufest varje dag!",
-      "län": "",
+      "län": "Stockholm",
       "boende": "Trappuppgång",
       "boendeAnnat": "",
       "sysselsättning": "lodis",
@@ -249,37 +249,6 @@
       "presentation": "pluggpluggplugg",
       "ålder": "29",
       "kön": "Kvinna"
-    },
-    {
-      "id": "9856",
-      "rubrik": "",
-      "län": "",
-      "boende": "",
-      "boendeAnnat": "",
-      "sysselsättning": "",
-      "relstatus": "",
-      "partnerinfo": "",
-      "barnAntal": "",
-      "barnBoende": "",
-      "husdjurHar": false,
-      "husdjurHund": false,
-      "husdjurKatt": false,
-      "husdjurFågel": false,
-      "husdjurHäst": false,
-      "husdjurAnnat": "",
-      "stad": "",
-      "stadAlternativ": "",
-      "boendeSkog": false,
-      "boendeHav": false,
-      "boendeKultur": false,
-      "boendeShopping": false,
-      "bil": false,
-      "bilinfo": "",
-      "barn": false,
-      "fritidsintressen": "",
-      "presentation": "",
-      "ålder": "",
-      "kön": ""
     }
   ]
 }

@@ -8,7 +8,7 @@ function Nav() {
 
   const { activeUser, setActiveUser } = useContext(GlobalContext)
 
-  const handleCreateAdClick = (e) => {
+  const handleCreateOfferClick = (e) => {
     if (!activeUser.loggedIn) {
       e.preventDefault()
       alert('Du är inte inloggad. Logga in eller skapa ett konto för att lägga in en annons')
@@ -20,7 +20,7 @@ function Nav() {
 
     <Link to="/">Hem</Link> &nbsp;
     <Link to="/Test">Test</Link> &nbsp;
-    <Link to="/createOffer" onClick={handleCreateAdClick}>Skapa annons</Link>
+    <Link to="/createOffer" onClick={handleCreateOfferClick}>Skapa annons</Link>
     { activeUser.loggedIn && (
       <>
       <Link to='/user/'>Min sida</Link> &nbsp;

@@ -61,6 +61,13 @@
       "email": "mikaelfant@gmail.com",
       "password": "123",
       "role": "user"
+    },
+    {
+      "id": "8224",
+      "username": "fefefef",
+      "email": "erik.cronqvist@gmail.com",
+      "password": "efe",
+      "role": "user"
     }
   ],
   "ads": [

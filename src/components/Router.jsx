@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "../pages/Home.jsx"
+import Offer from "../pages/Offer.jsx"
+
 import Test from '../pages/Test.jsx'
 import Layout from "./Layout.jsx"
 import AdsPage from "../pages/AdsPage.jsx"
@@ -11,10 +13,11 @@ function Router() {
 
   return (
     <BrowserRouter>
-      <Layout> 
+      <Layout>
       <Routes>
         {/*<Route path="/" element={<Header />} />*/}
-        
+        <Route path="/createOffer" element={<Offer />} />
+
         <Route path="/" element={<Home />} /> {/*kan va självstängande element om det inte händer något mellan taggarna*/}
           <Route path="/test" element={<Test />} /><Route path="/test" element={<Test />} />
           <Route path="/test" element={<Test />} /><Route path="/adsPage" element={<AdsPage />} />

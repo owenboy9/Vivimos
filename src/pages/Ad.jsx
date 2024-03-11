@@ -481,11 +481,14 @@ function Section5({form, handleChange}) {
     </>
   );
 }
-function CreateOffer() {
+function CreateAd () {
   const navigate = useNavigate()
+  const { activeUser } = useContext(GlobalContext);
+  const [formData, setFormData] = useState({});
+
 
   const totalSections = 5;
-  const defaultOffer = {
+  const defaultAd = {
 
     rubrik: "",
     län: "",
@@ -518,7 +521,7 @@ function CreateOffer() {
   };
 
 
-  const [form, setForm] = useState(defaultOffer);
+  const [form, setForm] = useState(defaultAd);
 
   const handleChange = (event) => {
     const {name, value, type, checked} = event.target;
@@ -597,20 +600,22 @@ function CreateOffer() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log('Form data:', form);
+    console.log(activeUser);
 
-    // Om Formdata ska användas lägg in:
-    // const data = new FormData(event.target);
+    const formDataWithId = {
+      ...form,
+      userId: activeUser.id,
+    };
+    console.log('With user Id:', formDataWithId);
 
-    // Och konvertera till objekt.
-    // const info = Object.fromEntries(data);
+
 
   const response = await fetch('/api/ads', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(form),
-    // body: JSON.stringify(info), ifall formdata
+    body: JSON.stringify(formDataWithId),
 
   });
 
@@ -652,4 +657,4 @@ return (
 );
 }
 
-export default CreateOffer;
+export default CreateAd;

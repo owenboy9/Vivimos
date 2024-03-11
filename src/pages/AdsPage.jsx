@@ -1,16 +1,37 @@
-import React, { useState, useEffect, useContext } from 'react'
 
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom"
 
 function AdsPage() {
   const [ads, setAds] = useState([])
 
   useEffect(() => {
     async function load() {
-      let data = await fetch("/api/db.json")
-      data = await data.json()
-      setAds(data)
+      const response = await fetch("/db.json")
+      const ads = await response.json()
+      setAds(ads)
     }
     load()
   }, [])
+
+
+
+  return (
+    <section>
+      <h1>Hej detta är annons-sidan</h1>
+      <ul>
+      {ads.map((ad)}
+    </ul>
+    </section>
+  
 }
+function AdsCard(adInfo)
+  const { id, username, email, password, role } = adInfo
+  return (
+    <li key={id}>
+      
+  </li>)
+export default AdsPage
+
+
 

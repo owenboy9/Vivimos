@@ -148,19 +148,19 @@ function Section2({form, handleChange}) {
       <h3>Ditt boende är:</h3>
       <label>
         Naturnära (skog)
-        <input type="checkbox" name="boendeSkog" checked={form.boendeSkog} onChange={handleChange}/>
+        <input type="checkbox" name="Skog" checked={form.Skog !== ""} onChange={handleChange}/>
       </label>
       <label>
         Naturnära (hav/sjö)
-        <input type="checkbox" name="boendeHav" checked={form.boendeHav} onChange={handleChange}/>
+        <input type="checkbox" name="Hav / Sjö" checked={form.Hav !== ""} onChange={handleChange}/>
       </label>
       <label>
         Kulturnära (biografer, teater, muséer, gallerier)
-        <input type="checkbox" name="boendeKultur" checked={form.boendeKultur} onChange={handleChange}/>
+        <input type="checkbox" name="Kultur" checked={form.Kultur !== ""} onChange={handleChange}/>
       </label>
       <label>
         Shoppingnära
-        <input type="checkbox" name="boendeShopping" checked={form.boendeShopping} onChange={handleChange}/>
+        <input type="checkbox" name="Shopping" checked={form.Shopping !== ""} onChange={handleChange}/>
       </label>
       <h3>Har du bil?</h3>
       <label>
@@ -168,8 +168,8 @@ function Section2({form, handleChange}) {
         <input
           type="radio"
           name="bil"
-          value="true"
-          checked={form.bil === true}
+          value="bil"
+          checked={form.bil === "bil"}
           onChange={handleChange}
         />
       </label>
@@ -178,8 +178,8 @@ function Section2({form, handleChange}) {
         <input
           type="radio"
           name="bil"
-          value="false"
-          checked={form.bil === false}
+          value=""
+          checked={form.bil === ""}
           onChange={handleChange}
         />
       </label>
@@ -231,8 +231,8 @@ function Section4({form, handleChange}) {
         <input
           type="radio"
           name="relstatus"
-          value="ensamvarg"
-          checked={form.relstatus === "ensamvarg"}
+          value="singel: ensamvarg"
+          checked={form.relstatus === "singel: ensamvarg"}
           onChange={handleChange}
         />
       </label>
@@ -321,8 +321,8 @@ function Section4({form, handleChange}) {
         <input
           type="radio"
           name="barn"
-          value="true"
-          checked={form.barn === true}
+          value="barn"
+          checked={form.barn === "barn"}
           onChange={handleChange}
         />
       </label>
@@ -331,12 +331,12 @@ function Section4({form, handleChange}) {
         <input
           type="radio"
           name="barn"
-          value="false"
-          checked={form.barn === false}
+          value=""
+          checked={form.barn === ""}
           onChange={handleChange}
         />
       </label>
-      {form.barn === true && (
+      {form.barn === "barn" && (
         <>
           <h3>Hur många?</h3>
           <input
@@ -346,6 +346,7 @@ function Section4({form, handleChange}) {
             onChange={handleChange}
             min="1"
           />
+
 
           <h3>Bor de hos dig?</h3>
           <label>
@@ -387,9 +388,9 @@ function Section4({form, handleChange}) {
         Ja
         <input
           type="radio"
-          name="husdjurHar"
-          value="true"
-          checked={form.husdjurHar}
+          name="husdjur"
+          value="husdjur"
+          checked={form.husdjur === "husdjur"}
           onChange={handleChange}
         />
       </label>
@@ -397,23 +398,23 @@ function Section4({form, handleChange}) {
         Nej
         <input
           type="radio"
-          name="husdjurHar"
-          value="false"
-          checked={!form.husdjurHar}
+          name="husdjur"
+          value=""
+          checked={form.husdjur === ""}
           onChange={handleChange}
         />
       </label>
 
-      {form.husdjurHar && (
+      {form.husdjur && (
         <>
-        <p>Vilket/vilka djur är det?</p>
+          <p>Vilket/vilka djur är det?</p>
 
           <label>
             Hund
             <input
               type="checkbox"
-              name="husdjurHund"
-              checked={form.husdjurHund}
+              name="Hund"
+              checked={form.Hund !== ''}
               onChange={handleChange}
             />
           </label>
@@ -421,8 +422,8 @@ function Section4({form, handleChange}) {
             Katt
             <input
               type="checkbox"
-              name="husdjurKatt"
-              checked={form.husdjurKatt}
+              name="Katt"
+              checked={form.Katt !== ''}
               onChange={handleChange}
             />
           </label>
@@ -430,8 +431,8 @@ function Section4({form, handleChange}) {
             Fågel
             <input
               type="checkbox"
-              name="husdjurFågel"
-              checked={form.husdjurFågel}
+              name="Fågel"
+              checked={form.Fågel !== ''}
               onChange={handleChange}
             />
           </label>
@@ -439,18 +440,19 @@ function Section4({form, handleChange}) {
             Häst
             <input
               type="checkbox"
-              name="husdjurHäst"
-              checked={form.husdjurHäst}
+              name="Häst"
+              checked={form.Häst !== ''}
               onChange={handleChange}
             />
           </label>
           <label>
-            Annat:
+            Andra
             <input
               type="text"
-              name="husdjurAnnat"
-              value={form.husdjurAnnat}
+              name="Annat"
+              value={form.Annat}
               onChange={handleChange}
+              placeholder="Ange andra husdjur"
             />
           </label>
         </>
@@ -494,21 +496,21 @@ function CreateOffer() {
     partnerinfo: "",
     barnAntal: "",
     barnBoende: "",
-    husdjurHar: false,
-    husdjurHund: false,
-    husdjurKatt: false,
-    husdjurFågel: false,
-    husdjurHäst: false,
-    husdjurAnnat: "",
+    husdjur: "",
+    Hund: "",
+    Katt: "",
+    Fågel: "",
+    Häst: "",
+    Annat: "",
     stad: "",
     stadAlternativ: "",
-    boendeSkog: false,
-    boendeHav: false,
-    boendeKultur: false,
-    boendeShopping: false,
-    bil: false,
+    Skog: "",
+    Hav: "",
+    Kultur: "",
+    Shopping: "",
+    bil: "",
     bilinfo: "",
-    barn: false,
+    barn: "",
     fritidsintressen: "",
     presentation: "",
     ålder: "",
@@ -522,15 +524,22 @@ function CreateOffer() {
     const {name, value, type, checked} = event.target;
 
     if (type === 'checkbox') {
-      setForm(prevForm => ({
-        ...prevForm,
-        [name]: checked,
-      }));
-    } else if (type === 'radio') {
-      if (value === 'true' || value === 'false') {
+      if (['Hund', 'Katt', 'Fågel', 'Häst', 'Skog', 'Hav', 'Kultur', 'Shopping'].includes(name)) {
         setForm(prevForm => ({
           ...prevForm,
-          [name]: value === 'true',
+          [name]: checked ? (name === 'Hav' ? 'Hav / Sjö' : name) : '',
+        }));
+      } else {
+        setForm(prevForm => ({
+          ...prevForm,
+          [name]: checked,
+        }));
+      }
+    } else if (type === 'radio') {
+      if (name === 'bil' || name === 'barn') {
+        setForm(prevForm => ({
+          ...prevForm,
+          [name]: value,
         }));
       } else {
         setForm(prevForm => ({
@@ -553,7 +562,6 @@ function CreateOffer() {
         ...prevForm,
         [name]: value,
       }));
-
     } else if (name === "boendeAnnat" || name === "bilinfo" || name === "partnerinfo" || name === "fritidsintressen" || name === "presentation" || name === "rubrik") {
       setForm(prevForm => ({
         ...prevForm,

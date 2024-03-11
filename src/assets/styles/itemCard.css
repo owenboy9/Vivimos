@@ -1,6 +1,8 @@
 
 
 .itemCard-container {
+  display: flex;
+  justify-content: space-between;
   padding: 1rem;
   margin-bottom: 10px;
   background-color: rgb(232, 232, 232);
@@ -17,4 +19,8 @@ ul {
 
 h2 {
   margin-bottom: 10px;
+}
+
+button {
+  cursor: pointer;
 }

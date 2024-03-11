@@ -481,7 +481,7 @@ function Section5({form, handleChange}) {
     </>
   );
 }
-function CreateOffer() {
+function CreateAd() {
   const navigate = useNavigate()
 
   const totalSections = 5;
@@ -652,4 +652,4 @@ return (
 );
 }
 
-export default CreateOffer;
+export default CreateAd;

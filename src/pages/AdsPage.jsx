@@ -14,23 +14,27 @@ function AdsPage() {
     load()
   }, [])
 
-
-
-  return (
-    <section>
+  return <section>
       <h1>Hej detta är annons-sidan</h1>
       <ul>
-      {ads.map((ad)}
-    </ul>
+        {ads.map(AdsCard)}
+      </ul>
     </section>
-  
 }
-function AdsCard(adInfo)
+function AdsCard(adInfo) {
   const { id, username, email, password, role } = adInfo
   return (
     <li key={id}>
-      
-  </li>)
+      <div>
+        <h2>{username}</h2>
+        <p>Email: {email}</p>
+        <p>Password: {password}</p>
+        <p>Role: {role}</p>
+      </div>
+    </li>
+  )
+}
+
 export default AdsPage
 
 

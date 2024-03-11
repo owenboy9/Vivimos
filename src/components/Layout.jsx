@@ -7,6 +7,7 @@ import '../assets/styles/layout.css'
 function Layout({children}) {
   return (
     <>
+    <div className='page'>
       <Header />
       <div className='page-container'>
 
@@ -14,6 +15,7 @@ function Layout({children}) {
 
       </div>
       <Footer />
+      </div>
     </>
   )
 }

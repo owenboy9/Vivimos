@@ -1,7 +1,15 @@
 .page-container {
   width: 67vw;
   margin: auto;
-  background-color: rgb(198, 198, 198);
+  background-color: rgba(148, 104, 11, 0.527);
   padding: 2rem;
   min-height: 100vh;
+border-radius: 1%;
+}
+
+.page {
+  background-size: cover;
+  background-position: center;
+  background-image: url('../images/puzzlelife.jpg');
+  background-size: cover;
 }

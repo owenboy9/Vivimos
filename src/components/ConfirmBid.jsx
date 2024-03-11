@@ -43,7 +43,7 @@ function ConfirmBid() {
 
 function saveBid(activeUser, auctionData) {
   console.log('saving bid')
-  const adId = auctionData
+  const adId = auctionData.id
   console.log(adId)
   const existingBids = []
   const requestOptions = {
@@ -56,7 +56,7 @@ function saveBid(activeUser, auctionData) {
     }),
   };
   
-  fetch(`api/ads/${auctionData.id}`, requestOptions)
+  fetch(`/api/ads/${auctionData.id}`, requestOptions)
     .then(response => response.json())    
     .then(data => console.log('Bid added:', data))
     .catch(error => console.error('Error adding bid:', error));

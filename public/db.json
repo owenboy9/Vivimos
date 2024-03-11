@@ -100,7 +100,10 @@
       "fritidsintressen": "",
       "presentation": "Tjolahopp",
       "ålder": "18",
-      "kön": "Man"
+      "kön": "Man",
+      "bids": [
+        null
+      ]
     },
     {
       "id": "b4ed",
@@ -162,7 +165,10 @@
       "fritidsintressen": "raggar unga män, går på opera, äter dyrt, promenerar på Djurgården",
       "presentation": "tjiipppi",
       "ålder": "77",
-      "kön": "Man"
+      "kön": "Man",
+      "bids": [
+        null
+      ]
     },
     {
       "id": "ee84",

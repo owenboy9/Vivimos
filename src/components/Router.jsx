@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "../pages/Home.jsx"
 import Test from '../pages/Test.jsx'
 import Layout from "./Layout.jsx"
+import AdsPage from "../pages/AdsPage.jsx"
 // import Header from "./Header.jsx"
 
 
@@ -15,7 +16,8 @@ function Router() {
         {/*<Route path="/" element={<Header />} />*/}
         
         <Route path="/" element={<Home />} /> {/*kan va självstängande element om det inte händer något mellan taggarna*/}
-        <Route path="/test" element={<Test />} />
+          <Route path="/test" element={<Test />} /><Route path="/test" element={<Test />} />
+          <Route path="/test" element={<Test />} /><Route path="/adsPage" element={<AdsPage />} />
       </Routes>
       </Layout>
     </BrowserRouter>

@@ -1,9 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom'
+import { GlobalContext } from '../GlobalContext'
 
 function ConfirmBid() {
+
   const { id } = useParams()
   const [auctionData, setAuctionData] = useState(null)
+  const { activeUser, setActiveUser} = useContext(GlobalContext)
 
   useEffect(() => {
     // Fetch auction data based on adId
@@ -24,14 +27,39 @@ function ConfirmBid() {
     return <div>Laddar...</div>
   }
 
+  const handleBidClick = () => {
+    saveBid(activeUser, auctionData)
+    alert('Ditt bud har sparats.')
+  }
+
   return (
     <div>
       <h2>Konfirmera bud</h2>
-      {/* Display relevant auction data */}
-      <p>Auktion: {auctionData.rubrik}</p>
-      <button>Lägg ditt bud</button>
+      <p>Auktion: {auctionData.id}</p>
+      <button onClick={handleBidClick}>Lägg ditt bud</button>
     </div>
   )
+}
+
+function saveBid(activeUser, auctionData) {
+  console.log('saving bid')
+  const adId = auctionData
+  console.log(adId)
+  const existingBids = []
+  const requestOptions = {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      bids: [...existingBids, activeUser.id], // assuming existingBids is an array containing previous bids
+    }),
+  };
+  
+  fetch(`api/ads/${auctionData.id}`, requestOptions)
+    .then(response => response.json())    
+    .then(data => console.log('Bid added:', data))
+    .catch(error => console.error('Error adding bid:', error));
 }
 
 export default ConfirmBid

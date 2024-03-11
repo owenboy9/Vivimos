@@ -143,13 +143,22 @@ return (
   
   async function createUser(e) {
     e.preventDefault()
+   
     const regData = new FormData(e.target)
+    const username = regData.get('username');
+    const email = regData.get('email');
+    const password = regData.get('password');
+
+    if (!username || !email || !password) {
+      alert('Du har missat att fylla i alla fält.')
+      return
+    }
+
     let regPost = Object.fromEntries(regData)
     regPost = {
       ...regPost,
       role: "user"
     }
-    console.log(e.target, 'regData', regData, 'regPost', regPost)
     try {
       await fetch(`api/users/`, {
         method: "POST",
@@ -171,9 +180,6 @@ return (
   }
 
 }
-
-
-
 
 
 

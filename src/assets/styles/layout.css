@@ -1,10 +1,31 @@
 .page-container {
   width: 67vw;
   margin: auto;
-  background-color: rgba(148, 104, 11, 0.527);
+  background-color: rgba(223, 184, 99, 0.644);
   padding: 2rem;
   min-height: 100vh;
-border-radius: 1%;
+  max-height: 100vh;
+  border-radius: 1%;
+  overflow: auto;
+  text-align: justify;
+}
+
+/* WebKit-based browsers (Chrome, Safari) */
+.page-container::-webkit-scrollbar {
+  width: 6px;
+
+  /* Adjust the width of the scrollbar as needed */
+}
+
+.page-container::-webkit-scrollbar-thumb {
+  background-color: rgba(122, 86, 7, 0.644);
+
+  /* Color of the scrollbar thumb */
+}
+
+.page-container::-webkit-scrollbar-track {
+  background-color: transparent;
+  /* Color of the scrollbar track */
 }
 
 .page {

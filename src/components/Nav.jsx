@@ -20,10 +20,10 @@ function Nav() {
 
     <Link to="/">Hem</Link> &nbsp;
     <Link to="/Test">Test</Link> &nbsp;
-    <Link to="/createOffer" onClick={handleCreateOfferClick}>Skapa annons</Link>
+    <Link to="/createOffer" onClick={handleCreateOfferClick}>Skapa annons</Link> &nbsp;
     { activeUser.loggedIn && (
       <>
-      <Link to='/user/'>Min sida</Link> &nbsp;
+      <Link to='/users/:username'>Min sida</Link> &nbsp;
       </>
     )}
   </nav>

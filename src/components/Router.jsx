@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route, useParams } from "react-router-dom"
 import Home from "../pages/Home.jsx"
 import Offer from "../pages/Offer.jsx"
 
@@ -23,6 +23,7 @@ function Router() {
         <Route path="/" element={<Home />} /> {/*kan va självstängande element om det inte händer något mellan taggarna*/}
         <Route path="/test" element={<Test />} />
         <Route path="/user/" element={<Userpage />} />
+        <Route path="/users/:username" element={<Userpage />} />
       </Routes>
       </Layout>
     </BrowserRouter>

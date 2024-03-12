@@ -27,7 +27,7 @@ function AdList() {
 
 function ItemCard(ad) {
 
-  const { id, rubrik, kön, ålder, stad, län, sysselsättning } = ad
+  const { id, rubrik, kön, ålder, stad, län, sysselsättning, bids } = ad
 
   const handleOfferButton = () => {
     navigate(`/ad/${id}/bid`)
@@ -42,6 +42,7 @@ function ItemCard(ad) {
         </li>
       </div>
       <div className='ad-right'>
+         {bids ? (<p>Antal bud: {bids.length}</p>) : null }   
         <button onClick={handleOfferButton}>Lägg ett bud</button>
       </div>
     </div>

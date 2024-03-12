@@ -43,9 +43,9 @@ function ConfirmBid() {
 
 function saveBid(activeUser, auctionData) {
   console.log('saving bid')
-  const adId = auctionData.id
-  console.log(adId)
-  const existingBids = []
+  console.log(auctionData.bids)
+  const existingBids = auctionData.bids
+  console.log(existingBids)
   const requestOptions = {
     method: 'PATCH',
     headers: {

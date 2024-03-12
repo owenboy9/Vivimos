@@ -102,7 +102,13 @@
       "ålder": "18",
       "kön": "Man",
       "bids": [
-        null
+        "8dde",
+        null,
+        null,
+        null,
+        null,
+        "1",
+        "e712"
       ]
     },
     {
@@ -134,7 +140,10 @@
       "fritidsintressen": "fiskar, plockar bär och svamp, virkar, trippar",
       "presentation": "Tjoflöjt",
       "ålder": "54",
-      "kön": "Kvinna"
+      "kön": "Kvinna",
+      "bids": [
+        "8dde"
+      ]
     },
     {
       "id": "a807",
@@ -167,7 +176,7 @@
       "ålder": "77",
       "kön": "Man",
       "bids": [
-        null
+        "8dde"
       ]
     },
     {
@@ -199,7 +208,10 @@
       "fritidsintressen": "Sover, äter benso",
       "presentation": "flipflip",
       "ålder": "33",
-      "kön": "Kvinna"
+      "kön": "Kvinna",
+      "bids": [
+        "8dde"
+      ]
     },
     {
       "id": "2563",

@@ -29,6 +29,7 @@ function handleButtonClick(e) {
   }
   else if (e.target.value === 'logout') {
     setActiveUser({})
+    setModalOpen(false)
   }
   
 }

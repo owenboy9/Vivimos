@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
-import logo from '../assets/images/vivimoslogo.png'
 import { Link } from "react-router-dom"
+import logo from '../assets/images/vivimoslogo.png'
 
 function AdsPage() {
   const [listings, setListings] = useState([])
@@ -17,7 +17,7 @@ function AdsPage() {
 
   return (
     <section>
-      <h2>Hej detta är annons-sidan</h2>
+      <h1>Hej detta är annons-sidan</h1>
       <ul>
       {listings.map(listing => (
         <AdsCard key={listing.id} adInfo={listing} />
@@ -28,16 +28,17 @@ function AdsPage() {
 
 }
 function AdsCard({ adInfo }) {
-  const { id, username,location, title, description, startDate, image} = adInfo
+  const { id, username,location, title, description, startDate, endDate, image} = adInfo
   return (
     <li key={id}>
       <div>
         <img className='logo' src={logo} />
-        <h1>Namn: {username}</h1>
+        <h2>Namn: {username}</h2>
         <p>Rubrik: {title}</p>
         <p>Plats: {location}</p>
         <p>Om mig: {description}</p>
-        <p>Annons publicerad: {startDate}</p>
+        <p>Auktion publicerad: {startDate}</p>
+        <p>Auktion avslutas: {endDate}</p>
       </div>
     </li>
   )

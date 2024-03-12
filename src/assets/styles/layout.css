@@ -1,11 +1,10 @@
 .page-container {
   width: 67vw;
   margin: auto;
-  background-color: rgba(223, 184, 99, 0.644);
+  background-color: rgba(207, 199, 182, 0.644);
   padding: 2rem;
   min-height: 100vh;
-  max-height: 100vh;
-  border-radius: 1%;
+  max-height: 200vh;
   overflow: auto;
   text-align: justify;
 }
@@ -18,7 +17,7 @@
 }
 
 .page-container::-webkit-scrollbar-thumb {
-  background-color: rgba(122, 86, 7, 0.644);
+  background-color:rgba(207, 199, 182, 0.644);
 
   /* Color of the scrollbar thumb */
 }
@@ -31,6 +30,6 @@
 .page {
   background-size: cover;
   background-position: center;
-  background-image: url('../images/puzzlelife.jpg');
+  background-image: url('../images/houselight.jpg');
   background-size: cover;
 }

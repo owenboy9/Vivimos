@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect, useContext } from "react"
+import { GlobalContext } from "../GlobalContext"
+import { Link, useNavigate } from "react-router-dom"
 import '../assets/styles/itemCard.css'
 
 function AdList() {
 
+  const { activeUser, setActiveUser } = useContext(GlobalContext)
   const navigate = useNavigate()
   const [items, setItems] = useState([])
   useEffect(() => {

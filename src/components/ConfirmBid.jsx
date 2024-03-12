@@ -28,8 +28,14 @@ function ConfirmBid() {
   }
 
   const handleBidClick = () => {
-    saveBid(activeUser, auctionData)
-    alert('Ditt bud har sparats.')
+    if (activeUser.loggedIn) {
+      saveBid(activeUser, auctionData)
+      alert('Ditt bud har sparats.')
+    }
+    else {
+      alert('Du måste logga in för att kunna lägga ett bud.')
+    }
+   
   }
 
   return (

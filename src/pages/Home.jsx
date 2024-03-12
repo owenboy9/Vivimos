@@ -12,7 +12,7 @@ function Home() {
     <>
       <AdList />
       <div className='itemCard-container'>
-        <div className='ad-info'>
+        <div className='ad-info'>ad info
           <li>en annons
             <h3>link</h3>
             <p>En x år gammal  person, från en län <br /> som är något och bor i en stad.</p>

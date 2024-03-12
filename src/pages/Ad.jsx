@@ -608,7 +608,8 @@ function CreateAd () {
     };
     console.log('With user Id:', formDataWithId);
 
-
+    // Och konvertera till objekt.
+    // const info = Object.fromEntries(data);
 
   const response = await fetch('/api/ads', {
     method: 'POST',

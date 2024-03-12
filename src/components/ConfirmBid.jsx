@@ -20,7 +20,7 @@ function ConfirmBid() {
       }
     };
 
-    fetchAuctionData();
+    fetchAuctionData()
   }, [id])
 
   if (!auctionData) {
@@ -28,8 +28,20 @@ function ConfirmBid() {
   }
 
   const handleBidClick = () => {
-    saveBid(activeUser, auctionData)
-    alert('Ditt bud har sparats.')
+    if (activeUser.loggedIn) {
+      if (!auctionData.bids || !auctionData.bids.includes(activeUser.id)) {
+        saveBid(activeUser, auctionData)
+        alert('Ditt bud har sparats.')
+      }
+      else {
+        alert('Du har redan lagt ett bud på den här auktionen.')
+      }
+      
+    }
+    else {
+      alert('Du måste logga in för att kunna lägga ett bud.')
+    }
+   
   }
 
   return (
@@ -43,9 +55,9 @@ function ConfirmBid() {
 
 function saveBid(activeUser, auctionData) {
   console.log('saving bid')
-  const adId = auctionData.id
-  console.log(adId)
-  const existingBids = []
+  console.log(auctionData.bids)
+  const existingBids = auctionData.bids || []
+  console.log(existingBids)
   const requestOptions = {
     method: 'PATCH',
     headers: {

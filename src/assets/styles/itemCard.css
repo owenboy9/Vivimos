@@ -9,7 +9,7 @@
   box-shadow: 1px 1px 1px rgba(124, 13, 28, 0.836);
   border-radius: 5px;
   font-family: 'Fredericka the Great';
-  transition: background-color 0.5s, transform 0.5s, color 0.5s;
+  transition: background-color 0.4s, color 0.5s;
 }
 
 .itemCard-container:hover {
@@ -20,7 +20,7 @@
 
 .ad-info {
   font-family: 'Fredericka the Great';
-  transition: color 0.3s;
+  transition: color 0.4s;
 }
 
 .ad-info:hover {

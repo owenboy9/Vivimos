@@ -123,7 +123,7 @@ return (
     e.preventDefault()
     console.log(formData.username)
     try {
-      const response = await fetch(`api/users/?username=${formData.username}&password=${formData.password}`)
+      const response = await fetch(`/api/users/?username=${formData.username}&password=${formData.password}`)
       const data = await response.json()
       
       if(data[0]) {

@@ -14,7 +14,7 @@
 
 .itemCard-container:hover {
   background-color: rgba(114, 112, 108, 0.877);
-  transform: scale(1.1);
+  transform: scale(1.07);
   box-shadow: 1.5px 1.5px 1px rgba(124, 13, 28, 0.836);
 }
 

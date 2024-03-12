@@ -9,7 +9,8 @@ nav {
 }
 
 nav a {
-  text-decoration: none;
   color: black;
   margin: 3vw;
+  font-family: 'Fredericka the Great';
+  font-weight: 600;
 }

@@ -3,17 +3,19 @@
   right: 10px;
   top: 15px;
   display: flex;
+  font-family: 'Fredericka the Great';
 }
 
 .login-form {
   display: inline;
+  font-family: 'Fredericka the Great';
 }
 
 
 input {
   margin-right: 10px;
   background-color: rgba(207, 199, 182, 0.644);
-
+  font-family: 'Fredericka the Great';
 }
 
 button {
@@ -21,4 +23,5 @@ button {
   background-color: rgba(207, 199, 182, 0.582);
   border-width: 1px;
   border-radius: 5px;
+  font-family: 'Fredericka the Great';
 }

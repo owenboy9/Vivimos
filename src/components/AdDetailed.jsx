@@ -11,10 +11,7 @@ function AdDetailed() {
     fetch('/api/ads')
       .then(response => response.json())
       .then(data => {
-        console.log('Fetched data:', data); // Log the fetched data
-        console.log('ID from params:', id); // Log the ID from params
         const foundAd = data.find(ad => ad.id === id);
-        console.log('Found ad:', foundAd); // Log the found ad
         setAd(foundAd);
       });
   }, [id]);

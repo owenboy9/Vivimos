@@ -428,7 +428,10 @@
       "kön": "Man",
       "publicerad": true,
       "enddate": "2024-03-29",
-      "userId": "ad58"
+      "userId": "ad58",
+      "bids": [
+        "ad58"
+      ]
     },
     {
       "id": "db12",

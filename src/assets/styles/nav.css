@@ -10,8 +10,7 @@ nav {
 }
 
 nav:hover {
-  background-color: rgba(110, 107, 100, 0.719);
-  transform: scale(1.06);
+  background-color: rgba(128, 124, 117, 0.719);
 }
 
 nav a {

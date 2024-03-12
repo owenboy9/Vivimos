@@ -14,9 +14,17 @@
 
 .itemCard-container:hover {
   background-color: rgba(43, 42, 40, 0.849);
-  transform: scale(1.07);
   color: rgba(236, 233, 228, 0.781);
   cursor: pointer;
+}
+
+.ad-info {
+  font-family: 'Fredericka the Great';
+  transition: transform 0.3s;
+}
+
+.ad-info:hover {
+  color: rgba(236, 233, 228, 0.781);
 }
 
 a {

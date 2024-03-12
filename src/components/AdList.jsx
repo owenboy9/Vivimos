@@ -6,24 +6,27 @@ import '../assets/styles/itemCard.css'
 function AdList() {
 
   const { activeUser, setActiveUser } = useContext(GlobalContext)
+  const { ads, setAds } = useContext(GlobalContext)
+  const { filteredAds, setFilteredAds } = useContext(GlobalContext)
   const navigate = useNavigate()
   const [items, setItems] = useState([])
   useEffect(() => {
     async function load() {
       const response = await fetch('/api/ads')
       let items = await response.json()
-      items = items.filter(item => item.publicerad === true);
-
+      items = items.filter(item => item.publicerad === true)
       console.log(response)
       setItems(items)
+      setAds(items)
+      setFilteredAds(items)
     }
     load()
   }, [])
 
   return <section>
-    <h2>Aktuella annonser:</h2>
+    <h2>Aktuella auktioner:</h2>
     <ul>
-      {items.map(ItemCard)}
+      {filteredAds.map(ItemCard)}
     </ul>
   </section>
 

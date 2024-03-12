@@ -6,7 +6,7 @@ function deleteAd({ listingId, onClick }) {
   const [remove, setRemove] = useState('')
   
   async function removeAd() {
-    const response = await fetch(`http://localhost:3000/listings/${listingId}`, {
+    const response = await fetch(`http://localhost:3001/listings/${listingId}`, {
       method: 'DELETE'
     })
 

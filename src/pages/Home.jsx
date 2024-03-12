@@ -10,7 +10,18 @@ function Home() {
 
   return (
     <>
-    <AdList />
+      <AdList />
+      <div className='itemCard-container'>
+        <div className='ad-info'>
+          <li>en annons
+            <h3>link</h3>
+            <p>En x år gammal  person, från en län <br /> som är något och bor i en stad.</p>
+          </li>
+        </div>
+        <div className='ad-right'>
+          <button>Lägg ett bud</button>
+        </div>
+      </div>
     </>
   );
 }

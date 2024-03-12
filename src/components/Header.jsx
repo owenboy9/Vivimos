@@ -5,9 +5,11 @@ import logo from '../assets/images/vivimoslogo.png'
 import '../assets/styles/header.css'
 
 function Header() {
-  return(
+  return (
     <div className='header-container'>
-      <img className='logo' src={logo} />
+      <div classname='logo-container'>
+        <img className='logo' src={logo} />
+      </div>
       <Nav />
       <Login />
     </div>

@@ -1,21 +1,23 @@
 .login-container {
   position: absolute;
   right: 10px;
-  top: 10px;
+  top: 15px;
   display: flex;
-
 }
 
 .login-form {
   display: inline;
-
 }
 
 
 input {
   margin-right: 10px;
+  background-color: rgba(207, 199, 182, 0.644);
+
 }
 
 button {
   margin-right: 10px;
+  background-color: rgba(207, 199, 182, 0.582);
+  border-width: 1px;
 }

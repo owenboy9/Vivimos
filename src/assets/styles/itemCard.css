@@ -1,11 +1,21 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Fredericka+the+Great&display=swap');
 
 .itemCard-container {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
   margin-bottom: 10px;
-  background-color: rgb(232, 232, 232);
+  background-color: rgba(110, 109, 107, 0.699);
+  box-shadow: 1px 1px 1px rgba(124, 13, 28, 0.836);
+  border-radius: 5px;
+  font-family: 'Fredericka the Great';
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.itemCard-container:hover {
+  background-color: rgba(114, 112, 108, 0.877);
+  transform: scale(1.1);
+  box-shadow: 1.5px 1.5px 1px rgba(124, 13, 28, 0.836);
 }
 
 a {

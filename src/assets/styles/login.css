@@ -20,4 +20,5 @@ button {
   margin-right: 10px;
   background-color: rgba(207, 199, 182, 0.582);
   border-width: 1px;
+  border-radius: 5px;
 }

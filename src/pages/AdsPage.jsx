@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 import logo from '../assets/images/vivimoslogo.png'
-import deleteAd from "../components/DeleteAd";
+import deleteAd from "../components/DeleteFunction";
 
 function AdsPage() {
   const [listings, setListings] = useState([])

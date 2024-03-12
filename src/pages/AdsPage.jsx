@@ -29,7 +29,7 @@ function AdsPage() {
 
 }
 function AdsCard({ adInfo }) {
-  const { id, username,location, title, description, startDate, endDate, image} = adInfo
+  const { id, username,location, title, description, startDate, endDate } = adInfo
   return (
     <li key={id}>
       <div>

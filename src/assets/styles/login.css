@@ -29,6 +29,6 @@ button {
 
 button:hover {
   background-color: rgba(54, 53, 49, 0.849);
-  transform: scale(1.07);
+  transform: scale(1.1);
   color: rgba(236, 233, 228, 0.781);
 }

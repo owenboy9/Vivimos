@@ -23,4 +23,5 @@ nav a {
 
 nav a:hover {
   color: rgba(236, 233, 228, 0.781);
+  background-color: rgba(128, 124, 117, 0.719);
 }

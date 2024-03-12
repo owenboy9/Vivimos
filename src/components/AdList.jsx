@@ -11,7 +11,9 @@ function AdList() {
   useEffect(() => {
     async function load() {
       const response = await fetch('/api/ads')
-      const items = await response.json()
+      let items = await response.json()
+      items = items.filter(item => item.publicerad === true);
+
       console.log(response)
       setItems(items)
     }
@@ -27,7 +29,7 @@ function AdList() {
 
 function ItemCard(ad) {
 
-  const { id, rubrik, kön, ålder, stad, län, sysselsättning } = ad
+  const { id, rubrik, kön, ålder, stad, län, sysselsättning, enddate } = ad
 
   const handleOfferButton = () => {
     navigate(`/ad/${id}/bid`)
@@ -38,7 +40,9 @@ function ItemCard(ad) {
       <div className='ad-info'>
         <li key={id}>
           <h3><Link to={`/ad/${id}`}>{rubrik}</Link></h3>
-          <p>En {ålder} år gammal {kön.toLowerCase()}, från {län} <br/> som är {sysselsättning.toLowerCase()} och bor i {stad.toLowerCase()}.</p>
+          <p>En {ålder} år gammal {kön.toLowerCase()}, från {län} <br/> som är {sysselsättning.toLowerCase()} och bor i {stad.toLowerCase()}.</p>&nbsp;
+          <p>Denna annons är aktiv till och med {enddate}.</p>
+
         </li>
       </div>
       <div className='ad-right'>

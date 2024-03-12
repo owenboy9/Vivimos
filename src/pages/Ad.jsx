@@ -605,12 +605,16 @@ function CreateAd () {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    const endTimestamp = new Date(form.enddate).getTime();
+
     //console.log('Form data:', form);
     //console.log(activeUser);
 
     const formDataWithId = {
       ...form,
       userId: activeUser.id,
+      endTimestamp,
     };
     console.log('With user Id:', formDataWithId);
 

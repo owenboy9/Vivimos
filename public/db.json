@@ -297,5 +297,68 @@
       "Katt": "",
       "Hund": ""
     }
-  ]
+  ],
+    "listings": [
+      {
+        "id": "1",
+        "userId": "1",
+        "image":"logo",
+        "username": "David",
+        "location": "Södermanland",
+        "title": "Fotograf med passion för naturen",
+        "description": "Jag är en 28-årig fotograf som bor nära havet. Jag älskar att fånga naturens skönhet genom min kamera och spendera tid utomhus.",
+        "startDate": "2024-04-01",
+        "endDate": "2024-05-01"
+      },
+      {
+        "id": "2",
+        "userId": "2",
+        "username": "Emma",
+        "location": "Dalarna",
+        "title": "Konstkurator med passion för yoga",
+        "description": "Jag är en 35-årig konstkurator som brinner för konst och meditation. Jag finner lugn och frid på landsbygden , där jag kan fördjupa min yogapraktik och inspireras av naturen.",
+        "startDate": "2024-04-01",
+        "endDate": "2024-05-01"
+      },
+      {
+        "id": "3",
+        "userId": "3",
+        "username": "Ali",
+        "location": "Västergötland",
+        "title": "Kock som älskar mat och bio",
+        "description": "Jag är en 40-årig kock vars liv kretsar kring kreativitet i köket och passionen för film. Jag älskar att experimentera med nya smaker och maträtter.",
+        "startDate": "2024-04-02",
+        "endDate": "2024-05-02"
+      },
+      {
+        "id": "4",
+        "userId": "4",
+        "username": "Sofia",
+        "location": "Uppland",
+        "title": "Livsnjutare som älskar dans och musik",
+        "description": "Jag är Sofía, en 25-årig dansinstruktör med en passion för att utforska olika kulturer genom dans. Mitt hjärta klappar för att inspirera andra genom min dans och älskar nattlivet i staden.",
+        "startDate": "2024-04-03",
+        "endDate": "2024-05-02"
+      },
+      {
+        "id": "5",
+        "userId": "5",
+        "username": "Johan",
+        "location": "Skåne",
+        "title": "Trädgårdsmästare med passion för golf ",
+        "description": "Jag är en 45-årig trädgårdsmästare, min passion är trädgårdsarbete och golf. Jag njuter av att vara utomhus, omgiven av naturen och med golfklubborna i handen.",
+        "startDate": "2024-04-03",
+        "endDate": "2024-05-03"
+      },
+      {
+        "id": "6",
+        "userId": "6",
+        "username": "Maria",
+        "location": "Jämtland",
+        "title": "Fotograf som älskar skidåkning och bakning",
+        "description": "Jag är en 30-årig fotograf, min vardag är en spännande blandning av äventyr utomhus och kreativt utforskande inomhus. Jag älskar att fånga naturens skönhet på bild och att experimentera med nya bakningsrecept.",
+        "startDate": "2024-04-03",
+        "endDate": "2024-05-03"
+      }
+    ]
 }

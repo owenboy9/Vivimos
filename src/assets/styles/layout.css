@@ -17,7 +17,7 @@
 }
 
 .page-container::-webkit-scrollbar-thumb {
-  background-color:rgba(207, 199, 182, 0.644);
+  background-color: rgba(207, 199, 182, 0.644);
 
   /* Color of the scrollbar thumb */
 }
@@ -31,5 +31,4 @@
   background-size: cover;
   background-position: center;
   background-image: url('../images/houselight.jpg');
-  background-size: cover;
 }

@@ -24,4 +24,11 @@ button {
   border-width: 1px;
   border-radius: 5px;
   font-family: 'Fredericka the Great';
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: rgba(54, 53, 49, 0.849);
+  transform: scale(1.07);
+  color: rgba(236, 233, 228, 0.781);
 }

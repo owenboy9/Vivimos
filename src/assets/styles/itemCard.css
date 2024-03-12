@@ -5,7 +5,7 @@
   justify-content: space-between;
   padding: 1rem;
   margin-bottom: 10px;
-  background-color: rgba(110, 109, 107, 0.699);
+  background-color: rgba(110, 107, 100, 0.719);
   box-shadow: 1px 1px 1px rgba(124, 13, 28, 0.836);
   border-radius: 5px;
   font-family: 'Fredericka the Great';
@@ -13,9 +13,9 @@
 }
 
 .itemCard-container:hover {
-  background-color: rgba(114, 112, 108, 0.877);
+  background-color: rgba(54, 53, 49, 0.849);
   transform: scale(1.07);
-  box-shadow: 1.5px 1.5px 1px rgba(124, 13, 28, 0.836);
+  color: rgba(236, 233, 228, 0.781);
 }
 
 a {

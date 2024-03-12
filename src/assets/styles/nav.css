@@ -6,6 +6,12 @@ nav {
   text-align: center;
   font-family: sans-serif;
   border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+nav:hover {
+  background-color: rgba(110, 107, 100, 0.719);
+  transform: scale(1.06);
 }
 
 nav a {
@@ -13,4 +19,9 @@ nav a {
   margin: 3vw;
   font-family: 'Fredericka the Great';
   font-weight: 600;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+  color: rgba(236, 233, 228, 0.781);
 }

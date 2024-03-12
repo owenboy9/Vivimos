@@ -6,6 +6,7 @@ import Test from '../pages/Test.jsx'
 import Userpage from '../pages/Userpage.jsx'
 import Layout from "./Layout.jsx"
 import AdsPage from "../pages/AdsPage.jsx"
+import DeleteAd from "./DeleteAd.jsx"
 import AdDetailed from "./AdDetailed";
 // import Header from "./Header.jsx"
 
@@ -28,6 +29,7 @@ function Router() {
         <Route path="/test" element={<Test />} />
         <Route path="/user/" element={<Userpage />} />
         <Route path="/users/:username" element={<Userpage />} />
+        <Route path="/delete-ad" element={<DeleteAd />} />
       </Routes>
       </Layout>
     </BrowserRouter>

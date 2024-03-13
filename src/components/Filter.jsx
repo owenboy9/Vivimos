@@ -10,7 +10,8 @@ function Filter() {
     let input = e.target.value
     setFilteredAds(ads.filter(item => 
       item.rubrik.includes(input) ||
-      item.län.includes(input) ))
+      item.län.includes(input) ||
+      item.barn.includes(input) ))
   }
 
   return (

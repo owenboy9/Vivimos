@@ -14,8 +14,10 @@
 
 input {
   margin-right: 10px;
-  background-color: rgba(207, 199, 182, 0.644);
   font-family: 'Fredericka the Great';
+  background-color: rgba(206, 201, 190, 0.815);
+  border-radius: 5px;
+  border-width: 1px;
 }
 
 button {

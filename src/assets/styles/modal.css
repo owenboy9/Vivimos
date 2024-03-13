@@ -5,10 +5,12 @@
   transform: translate(-50%, -50%);
   align-items: center;
   justify-content: center;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(148, 134, 101, 0.986);
   padding: 2rem;
   box-shadow: 0 2px 2px;
   border-radius: 5px;
+  z-index: 1000;
+  font-family: 'Fredericka the Great';
 }
 
 .modal-header {

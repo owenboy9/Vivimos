@@ -75,6 +75,13 @@
       "email": "mikaelfant@gmail.com",
       "password": "123",
       "role": "user"
+    },
+    {
+      "id": "b456",
+      "username": "brillinat_emma",
+      "email": "emma@trinket.us",
+      "password": "wow",
+      "role": "user"
     }
   ],
   "ads": [
@@ -361,7 +368,8 @@
       "Hav / Sjö": true,
       "userId": "ad58",
       "bids": [
-        "1"
+        "1",
+        "b456"
       ]
     },
     {

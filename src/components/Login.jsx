@@ -14,96 +14,96 @@ function Login() {
 
 
   const [formData, setFormData] = useState({
-    username: '', 
+    username: '',
     password: ''
-})
+  })
 
-function handleButtonClick(e) {
-  console.log(e)
-  setModalOpen(true)
-  if (e.target.value === 'login') {
-    setLoginOpen(true)
+  function handleButtonClick(e) {
+    console.log(e)
+    setModalOpen(true)
+    if (e.target.value === 'login') {
+      setLoginOpen(true)
+    }
+    else if (e.target.value === 'register') {
+      setRegOpen(true)
+    }
+    else if (e.target.value === 'logout') {
+      setActiveUser({})
+      setModalOpen(false)
+    }
+
   }
-  else if (e.target.value === 'register') {
-    setRegOpen(true)
-  }
-  else if (e.target.value === 'logout') {
-    setActiveUser({})
-    setModalOpen(false)
-  }
-  
-}
 
-return (
- 
-  <div className='login-container'>
-     { !activeUser.loggedIn ? (
-    <>  
-    <button value='login' onClick={ handleButtonClick }> Logga in</button>
-    <button value='register' onClick={ handleButtonClick }>Registera dig</button>
-    </>
-  ) : (
-    <button value='logout' onClick={ handleButtonClick }> Logga ut</button>
-  )}
-    
-    { modalOpen && loginOpen && (
-      createPortal(
-      <Modal>
-        <h2>Logga in</h2>
-        <form onSubmit={e => fetchUser(e, formData)}>
-        <label>
-          Användarnamn:
-        </label>
-        <input type="text" name="username" value={formData.username} onChange={e => handleChange(e)}></input>
-        <br />
-        <label>
-          Lösenord:
-        </label>
-        <input type="password" name="password" value={formData.password} onChange={e => handleChange(e)}></input>
-        <br />
-        <button type="submit">Login</button>  
-        </form>
-      </Modal>, document.body
-      )
-    )}
+  return (
 
-    { modalOpen && regOpen && (
-      <Modal>
-        <h2>Registrera ny användare</h2>
-        <form onSubmit={e => createUser(e)}>
-        <label>
-          Användarnamn:
-        </label>
-        <input type="text" name="username"></input>
-        <br />
-        <label>
-          Email:
-        </label>
-        <input type="email" name="email"></input>
-        <br />
-        <label>
-          Lösenord:
-        </label>
-        <input type="password" name="password"></input>
-        <br />
-        <button onClick={ handleReg }>Registrera</button>
-      </form>
-      </Modal>
-    )}
-  </div>
-)
-    
+    <div className='login-container'>
+      {!activeUser.loggedIn ? (
+        <>
+          <button value='login' onClick={handleButtonClick}> Logga in</button>
+          <button value='register' onClick={handleButtonClick}>Registera dig</button>
+        </>
+      ) : (
+        <button value='logout' onClick={handleButtonClick}> Logga ut</button>
+      )}
 
-    
+      {modalOpen && loginOpen && (
+        createPortal(
+          <Modal>
+            <h2>Logga in</h2>
+            <form onSubmit={e => fetchUser(e, formData)}>
+              <label>
+                Användarnamn:&nbsp;
+              </label>
+              <input type="text" name="username" value={formData.username} onChange={e => handleChange(e)}></input>
+              <br />
+              <label>
+                Lösenord:&nbsp;
+              </label>
+              <input type="password" name="password" value={formData.password} onChange={e => handleChange(e)}></input>
+              <br />
+              <button type="submit">Login</button>
+            </form>
+          </Modal>, document.body
+        )
+      )}
 
-    useEffect(() => {
-      console.log(activeUser)
-    }, [activeUser])
-   
+      {modalOpen && regOpen && (
+        <Modal>
+          <h2>Registrera ny användare</h2>
+          <form onSubmit={e => createUser(e)}>
+            <label>
+              Användarnamn:&nbsp;
+            </label>
+            <input type="text" name="username"></input>
+            <br />
+            <label>
+              Email:&nbsp;
+            </label>
+            <input type="email" name="email"></input>
+            <br />
+            <label>
+              Lösenord:&nbsp;
+            </label>
+            <input type="password" name="password"></input>
+            <br />
+            <button onClick={handleReg}>Registrera</button>
+          </form>
+        </Modal>
+      )}
+    </div>
+  )
+
+
+
+
+  useEffect(() => {
+    console.log(activeUser)
+  }, [activeUser])
+
   function handleChange(e) {
     setFormData((prevFormData) => ({
-      ...prevFormData, 
-      [e.target.name] : e.target.value
+      ...prevFormData,
+      [e.target.name]: e.target.value
     }))
   }
 
@@ -126,8 +126,8 @@ return (
     try {
       const response = await fetch(`/api/users/?username=${formData.username}&password=${formData.password}`)
       const data = await response.json()
-      
-      if(data[0]) {
+
+      if (data[0]) {
         console.log(data, formData)
         setActiveUser({
           ...data[0],
@@ -140,11 +140,11 @@ return (
       setModalOpen(false)
     }
   }
-  
-  
+
+
   async function createUser(e) {
     e.preventDefault()
-   
+
     const regData = new FormData(e.target)
     const username = regData.get('username');
     const email = regData.get('email');
@@ -168,16 +168,16 @@ return (
         },
         body: JSON.stringify(regPost),
       })
-      .then((response) => response.json())
-      .then((data) => console.log('New user added:', data))
-      .catch((error) => console.error('Error adding new user:', error))
-      
+        .then((response) => response.json())
+        .then((data) => console.log('New user added:', data))
+        .catch((error) => console.error('Error adding new user:', error))
+
     } catch (error) {
       console.error('Error fetching mock data:', error)
     } finally {
       setModalOpen(false)
     }
-  
+
   }
 
 }

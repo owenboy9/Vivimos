@@ -22,7 +22,7 @@ function Router() {
         <Route path='/ad/:id/bid' element={<ConfirmBid />} />
         <Route path="/" element={<Home />} /> {/*kan va självstängande element om det inte händer något mellan taggarna*/}
         <Route path="/test" element={<Test />} />
-        <Route path="/users/:username" element={<Userpage />} />
+        <Route path="/users/:id" element={<Userpage />} />
       </Routes>
       </Layout>
     </BrowserRouter>

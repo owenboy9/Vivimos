@@ -107,12 +107,12 @@ return (
     }))
   }
 
-  function handleLogout() {
+ /*  function handleLogout() {
     setActiveUser({})
     setShowReg(false)
     setModalOpen(false)
     formData = []
-  }
+  } */
 
   function handleReg() {
     console.log('handle reg')

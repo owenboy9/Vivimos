@@ -75,6 +75,13 @@
       "email": "mikaelfant@gmail.com",
       "password": "123",
       "role": "user"
+    },
+    {
+      "id": "4dfc",
+      "username": "idiot",
+      "email": "apa@gmail.com",
+      "password": "q",
+      "role": "user"
     }
   ],
   "ads": [
@@ -431,7 +438,7 @@
       "kön": "Man",
       "publicerad": true,
       "enddate": "2024-03-29",
-      "userId": "ad58"
+      "userId": "1"
     },
     {
       "id": "db12",

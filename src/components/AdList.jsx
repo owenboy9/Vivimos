@@ -37,7 +37,7 @@ function ItemCard(ad) {
     <div className='itemCard-container'>
       <div className='ad-info'>
         <li key={id}>
-          <h3><Link to={`/ad/${id}`}>{rubrik}</Link></h3>
+          <h3><Link to={`/ad/${id}`} className='title'>{rubrik}</Link></h3>
           <p>En {ålder} år gammal {kön.toLowerCase()}, från {län} <br/> som är {sysselsättning.toLowerCase()} och bor i {stad.toLowerCase()}.</p>
         </li>
       </div>

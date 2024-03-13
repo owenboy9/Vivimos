@@ -318,6 +318,38 @@
       "bids": [
         "1"
       ]
+    },
+    {
+      "id": "f2ad",
+      "rubrik": "toma intet",
+      "län": "Västernorrland",
+      "boende": "",
+      "boendeAnnat": "",
+      "sysselsättning": "ingen",
+      "relstatus": "singel: ensamvarg",
+      "partnerinfo": "",
+      "barnAntal": "",
+      "barnBoende": "",
+      "husdjur": "",
+      "Hund": "",
+      "Katt": "",
+      "Fågel": "",
+      "Häst": "",
+      "Annat": "",
+      "stad": "Bystan",
+      "stadAlternativ": "",
+      "Skog": "",
+      "Hav": "",
+      "Kultur": "Kultur",
+      "Shopping": "",
+      "bil": "",
+      "bilinfo": "",
+      "barn": "",
+      "fritidsintressen": "ingenting",
+      "presentation": "försöker skriva ner det som sker",
+      "ålder": "44",
+      "kön": "Annat",
+      "Hav / Sjö": true
     }
   ]
 }

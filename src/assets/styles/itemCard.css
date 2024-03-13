@@ -18,6 +18,15 @@
   cursor: pointer;
 }
 
+.title {
+  font-family: 'Fredericka the Great';
+  transition: color 0.4s;
+}
+
+.title:hover {
+  color: rgba(236, 233, 228, 0.781);
+}
+
 .ad-info {
   font-family: 'Fredericka the Great';
   transition: color 0.4s;

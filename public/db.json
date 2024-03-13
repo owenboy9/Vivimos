@@ -397,7 +397,10 @@
       "publicerad": true,
       "enddate": "2024-03-21",
       "Hav / Sjö": true,
-      "userId": "ad58"
+      "userId": "ad58",
+      "bids": [
+        "1"
+      ]
     },
     {
       "id": "0ff1",

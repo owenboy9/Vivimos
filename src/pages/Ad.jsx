@@ -152,7 +152,7 @@ function Section2({form, handleChange}) {
       </label>
       <label>
         Naturnära (hav/sjö)
-        <input type="checkbox" name="Hav / Sjö" checked={form.Hav !== ""} onChange={handleChange}/>
+        <input type="checkbox" name="Hav" checked={form.Hav !== ""} onChange={handleChange}/>
       </label>
       <label>
         Kulturnära (biografer, teater, muséer, gallerier)
@@ -306,7 +306,7 @@ function Section4({form, handleChange}) {
           onChange={handleChange}
         />
       </label>
-      {form.relstatus !== "singel" && form.relstatus !== "" && form.relstatus !== "ensamvarg" && (
+      {!form.relstatus.includes("singel") && form.relstatus !== "" && (
         <>
           <p>Namn och ålder på din/a partner/s?:</p>
           <input type="text"
@@ -481,11 +481,52 @@ function Section5({form, handleChange}) {
     </>
   );
 }
-function CreateAd() {
+function Section6({form, handleChange}) {
+  return (
+    <>
+      <h2>Vill du publicera din annons nu eller spara den till senare?</h2>
+      <label>
+        Publicera
+        <input
+          type="radio"
+          name="publicerad"
+          value={true}
+          checked={form.publicerad === true}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Spara
+        <input
+          type="radio"
+          name="publicerad"
+          value={false}
+          checked={form.publicerad === false}
+          onChange={handleChange}
+        />
+      </label>
+      {form.publicerad && (
+        <>
+          <h3>Välj ett slutdatum för din annons:</h3>
+          <input
+            type="date"
+            name="enddate"
+            value={form.enddate}
+            onChange={handleChange}
+          />
+        </>
+      )}
+    </>
+  );
+}
+function CreateAd () {
   const navigate = useNavigate()
+  const { activeUser } = useContext(GlobalContext);
+  const [formData, setFormData] = useState({});
 
-  const totalSections = 5;
-  const defaultOffer = {
+
+  const totalSections = 6;
+  const defaultAd = {
 
     rubrik: "",
     län: "",
@@ -515,72 +556,40 @@ function CreateAd() {
     presentation: "",
     ålder: "",
     kön: "",
+    publicerad: false,
+    enddate: "",
   };
 
 
-  const [form, setForm] = useState(defaultOffer);
+  const [form, setForm] = useState(defaultAd);
 
   const handleChange = (event) => {
     const {name, value, type, checked} = event.target;
+    let newValue = value;
 
     if (type === 'checkbox') {
       if (['Hund', 'Katt', 'Fågel', 'Häst', 'Skog', 'Hav', 'Kultur', 'Shopping'].includes(name)) {
-        setForm(prevForm => ({
-          ...prevForm,
-          [name]: checked ? (name === 'Hav' ? 'Hav / Sjö' : name) : '',
-        }));
+        newValue = checked ? (name === 'Hav' ? 'Hav / Sjö' : name) : '';
       } else {
-        setForm(prevForm => ({
-          ...prevForm,
-          [name]: checked,
-        }));
+        newValue = checked;
       }
     } else if (type === 'radio') {
-      if (name === 'bil' || name === 'barn') {
-        setForm(prevForm => ({
-          ...prevForm,
-          [name]: value,
-        }));
-      } else {
-        setForm(prevForm => ({
-          ...prevForm,
-          [name]: value,
-        }));
+      if (name === 'publicerad') {
+        newValue = value === 'true';
       }
     } else if (name === "ålder") {
       const numValue = parseInt(value, 10);
       if (isNaN(numValue) || numValue < 18 || numValue > 120) {
         alert("Ålder måste vara mellan 18 och 120");
-      } else {
-        setForm(prevForm => ({
-          ...prevForm,
-          ålder: value,
-        }));
+        return;
       }
-    } else if (name === "barnAntal") {
-      setForm(prevForm => ({
-        ...prevForm,
-        [name]: value,
-      }));
-    } else if (name === "boendeAnnat" || name === "bilinfo" || name === "partnerinfo" || name === "fritidsintressen" || name === "presentation" || name === "rubrik") {
-      setForm(prevForm => ({
-        ...prevForm,
-        [name]: value,
-      }));
-    } else if (name === "kön" || name === "relstatus" || name === "län" || name === "boende" || name === "stad" || name === "stadAlternativ") {
-      setForm(prevForm => ({
-        ...prevForm,
-        [name]: value,
-      }));
-    } else {
-      setForm(prevForm => ({
-        ...prevForm,
-        [name]: value,
-      }));
     }
+
+    setForm(prevForm => ({
+      ...prevForm,
+      [name]: newValue,
+    }));
   }
-
-
 
   const [currentSection, setCurrentSection] = useState(1);
 
@@ -596,12 +605,20 @@ function CreateAd() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('Form data:', form);
 
-    // Om Formdata ska användas lägg in:
-    // const data = new FormData(event.target);
+    const endTimestamp = new Date(form.enddate).getTime();
 
-    // Och konvertera till objekt.
+    //console.log('Form data:', form);
+    //console.log(activeUser);
+
+    const formDataWithId = {
+      ...form,
+      userId: activeUser.id,
+      endTimestamp,
+    };
+    console.log('With user Id:', formDataWithId);
+
+    // Om konvertera till objekt.
     // const info = Object.fromEntries(data);
 
   const response = await fetch('/api/ads', {
@@ -609,15 +626,17 @@ function CreateAd() {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(form),
-    // body: JSON.stringify(info), ifall formdata
+    body: JSON.stringify(formDataWithId),
 
   });
 
-  if (response.ok) {
-      console.log('Data saved successfully');
-      alert(`Tack! Ditt liv i ${form.boende} i ${form.län}s län ligger nu ute för budgivning`)
-      navigate('/')
+
+
+    if (response.ok) {
+      form.publicerad
+        ? alert(`Tack! Din annons har nu publicerats! Den är aktiv till och med ${form.enddate}. Lycka till med livsbytet!`)
+        : alert('Din annons har sparats. Du kan publicera den när du vill på "Min sida"');
+      navigate('/');
     } else {
       console.error('Error saving data');
     }
@@ -630,6 +649,7 @@ return (
     {currentSection === 3 && <Section3 form={form} handleChange={handleChange}/>}
     {currentSection === 4 && <Section4 form={form} handleChange={handleChange}/>}
     {currentSection === 5 && <Section5 form={form} handleChange={handleChange}/>}
+    {currentSection === 6 && <Section6 form={form} handleChange={handleChange}/>}
 
     <br/>
     <br/>

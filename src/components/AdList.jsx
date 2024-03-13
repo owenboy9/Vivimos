@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react"
 import { GlobalContext } from "../GlobalContext"
 import { Link, useNavigate } from "react-router-dom"
+import bidpaddle from '../assets/images/bidpaddle.png'
 import '../assets/styles/itemCard.css'
 
 function AdList() {
@@ -49,6 +50,7 @@ function ItemCard(ad) {
         </li>
       </div>
       <div className='ad-right'>
+         {bids && bids.includes(activeUser.id) ? (<img className='bidPaddle' src={bidpaddle}></img>) : null}
          {bids ? (<p>Antal bud: {bids.length}</p>) : null }
         <button onClick={handleOfferButton}>Lägg ett bud</button>
       </div>

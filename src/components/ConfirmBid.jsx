@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { GlobalContext } from '../GlobalContext'
 
 function ConfirmBid() {
@@ -7,6 +7,7 @@ function ConfirmBid() {
   const { id } = useParams()
   const [auctionData, setAuctionData] = useState(null)
   const { activeUser, setActiveUser} = useContext(GlobalContext)
+  const navigate = useNavigate()
 
   useEffect(() => {
     // Fetch auction data based on adId
@@ -32,6 +33,7 @@ function ConfirmBid() {
       if (!auctionData.bids || !auctionData.bids.includes(activeUser.id)) {
         saveBid(activeUser, auctionData)
         alert('Ditt bud har sparats.')
+        navigate('/')
       }
       else {
         alert('Du har redan lagt ett bud på den här auktionen.')
@@ -46,7 +48,7 @@ function ConfirmBid() {
 
   return (
     <div>
-      <h2>Konfirmera bud</h2>
+      <h2>Bekräfta bud</h2>
       <p>Auktion: {auctionData.id}</p>
       <button onClick={handleBidClick}>Lägg ditt bud</button>
     </div>

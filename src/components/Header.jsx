@@ -7,9 +7,11 @@ import '../assets/styles/header.css'
 function Header() {
   return (
     <div className='header-container'>
-      <div classname='logo-container'>
-        <img className='logo' src={logo} />
-      </div>
+      <a href="/">
+        <div classname='logo-container'>
+          <img className='logo' src={logo} />
+        </div>
+      </a>
       <Nav />
       <Login />
     </div>

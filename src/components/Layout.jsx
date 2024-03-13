@@ -4,17 +4,17 @@ import Footer from './Footer.jsx'
 import AdList from "./AdList.jsx";
 import '../assets/styles/layout.css'
 
-function Layout({children}) {
+function Layout({ children }) {
   return (
     <>
-    <div className='page'>
-      <Header />
-      <div className='page-container'>
+      <div className='page'>
+        <Header />
+        <div className='page-container'>
 
-        {children}
+          {children}
 
-      </div>
-      <Footer />
+        </div>
+        <Footer />
       </div>
     </>
   )

@@ -5,30 +5,22 @@
   margin: auto;
   background-color: rgba(207, 199, 182, 0.644);
   padding: 2rem;
-  min-height: 100vh;
-  max-height: 200vh;
+  height: 220vh;
   overflow: auto;
   text-align: justify;
   font-family: 'Fredericka the Great';
+
 }
 
-/* WebKit-based browsers (Chrome, Safari) */
 .page-container::-webkit-scrollbar {
   width: 6px;
-
-  /* Adjust the width of the scrollbar as needed */
 }
 
 .page-container::-webkit-scrollbar-thumb {
   background-color: rgba(207, 199, 182, 0.644);
-
-  /* Color of the scrollbar thumb */
 }
 
-.page-container::-webkit-scrollbar-track {
-  background-color: transparent;
-  /* Color of the scrollbar track */
-}
+.page-container::-webkit-scrollbar-track {}
 
 .page {
   background-size: cover;

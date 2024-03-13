@@ -31,32 +31,34 @@ function AdList() {
     </ul>
   </section>
 
-function ItemCard(ad) {
+  function ItemCard(ad) {
 
-  const { id, rubrik, kön, ålder, stad, län, sysselsättning, enddate, bids } = ad
+    const { id, rubrik, kön, ålder, stad, län, sysselsättning, enddate, bids } = ad
 
-  const handleOfferButton = () => {
-    navigate(`/ad/${id}/bid`)
+    const handleOfferButton = () => {
+      navigate(`/ad/${id}/bid`)
+    }
+
+    return (
+      <div className='itemCard-container'>
+        <div className='ad-info'>
+          <li key={id}>
+            <h3><Link to={`/ad/${id}`}>{rubrik}</Link></h3>
+            <p>En {ålder} år gammal {kön.toLowerCase()}, från {län} <br /> som är {sysselsättning.toLowerCase()} och bor i {stad.toLowerCase()}.</p>&nbsp;
+            <p>Denna annons är aktiv till och med {enddate}.</p>
+
+          </li>
+        </div>
+        <div className='ad-right'>
+          {bids && bids.includes(activeUser.id) ? (<img className='bidPaddle' src={bidpaddle}></img>) : null}
+          {bids ? (<p className="antalBud">Antal bud: {bids.length}</p>) : null}
+          <div class="button-container">
+            <button onClick={handleOfferButton}>Lägg ett bud</button>
+          </div>
+        </div>
+      </div>
+    )
   }
-
-  return (
-    <div className='itemCard-container'>
-      <div className='ad-info'>
-        <li key={id}>
-          <h3><Link to={`/ad/${id}`}>{rubrik}</Link></h3>
-          <p>En {ålder} år gammal {kön.toLowerCase()}, från {län} <br/> som är {sysselsättning.toLowerCase()} och bor i {stad.toLowerCase()}.</p>&nbsp;
-          <p>Denna annons är aktiv till och med {enddate}.</p>
-
-        </li>
-      </div>
-      <div className='ad-right'>
-         {bids && bids.includes(activeUser.id) ? (<img className='bidPaddle' src={bidpaddle}></img>) : null}
-         {bids ? (<p>Antal bud: {bids.length}</p>) : null }
-        <button onClick={handleOfferButton}>Lägg ett bud</button>
-      </div>
-    </div>
-  )
-}
 
 
 }

@@ -26,9 +26,9 @@ function AdList() {
 
   return <section>
     <h2>Aktuella auktioner:</h2>
-    <ul>
-      {filteredAds.map(ItemCard)}
-    </ul>
+
+    {filteredAds.map(ItemCard)}
+
   </section>
 
   function ItemCard(ad) {
@@ -40,14 +40,14 @@ function AdList() {
     }
 
     return (
-      <div className='itemCard-container'>
+      <div className='itemCard-container' key={id}>
         <div className='ad-info'>
-          <li key={id}>
-            <h3><Link to={`/ad/${id}`}>{rubrik}</Link></h3>
-            <p>En {ålder} år gammal {kön.toLowerCase()}, från {län} <br /> som är {sysselsättning.toLowerCase()} och bor i {stad.toLowerCase()}.</p>&nbsp;
-            <p>Denna annons är aktiv till och med {enddate}.</p>
 
-          </li>
+          <h3><Link to={`/ad/${id}`}>{rubrik}</Link></h3>
+          <p>En {ålder} år gammal {kön.toLowerCase()}, från {län} <br /> som är {sysselsättning.toLowerCase()} och bor i {stad.toLowerCase()}.</p>&nbsp;
+          <p>Denna annons är aktiv till och med {enddate}.</p>
+
+
         </div>
         <div className='ad-right'>
           {bids && bids.includes(activeUser.id) ? (<img className='bidPaddle' src={bidpaddle}></img>) : null}

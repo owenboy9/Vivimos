@@ -407,7 +407,8 @@
       "Hav / Sjö": true,
       "userId": "ad58",
       "bids": [
-        "1"
+        "1",
+        "b456"
       ]
     },
     {
@@ -555,6 +556,41 @@
       "bids": [
         "8224"
       ]
+    },
+    {
+      "id": "6d36",
+      "rubrik": "efw",
+      "län": "",
+      "boende": "",
+      "boendeAnnat": "",
+      "sysselsättning": "sd",
+      "relstatus": "",
+      "partnerinfo": "",
+      "barnAntal": "",
+      "barnBoende": "",
+      "husdjur": "",
+      "Hund": "",
+      "Katt": "",
+      "Fågel": "",
+      "Häst": "",
+      "Annat": "",
+      "stad": "",
+      "stadAlternativ": "",
+      "Skog": "",
+      "Hav": "",
+      "Kultur": "",
+      "Shopping": "",
+      "bil": "",
+      "bilinfo": "",
+      "barn": "",
+      "fritidsintressen": "wed",
+      "presentation": "wd",
+      "ålder": "",
+      "kön": "",
+      "publicerad": false,
+      "enddate": "",
+      "userId": "b456",
+      "endTimestamp": null
     }
   ]
 }

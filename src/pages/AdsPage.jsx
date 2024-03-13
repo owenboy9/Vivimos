@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 import logo from '../assets/images/vivimoslogo.png'
+import '../assets/styles/adsPage.css'
 
 function AdsPage() {
   const [listings, setListings] = useState([])
@@ -29,20 +30,22 @@ function AdsPage() {
   }
 
   return (
-    <section>
+    <section className="ads-container">
       <h1>Hej detta är annons-sidan</h1>
-      <ul>
+      <ul className="ads-list">
         {listings.map(listing => (
-          <li key={listing.id}>
-            <div>
+          <li key={listing.id} className="ad-wrapper">
+            <div className="ad-content">
               <img className='logo' src={logo} alt="logo" />
-              <h2>Namn: {listing.username}</h2>
-              <p>Rubrik: {listing.title}</p>
-              <p>Plats: {listing.location}</p>
-              <p>Om mig: {listing.description}</p>
-              <p>Auktion publicerad: {listing.startDate}</p>
-              <p>Auktion avslutas: {listing.endDate}</p>
-              <button onClick={() => deleteAd(listingId)}>Ta bort</button>
+              <div>
+                <h2>Namn: {listing.username}</h2>
+                <p>Rubrik: {listing.title}</p>
+                <p>Plats: {listing.location}</p>
+                <p>Om mig: {listing.description}</p>
+                <p>Auktion publicerad: {listing.startDate}</p>
+                <p>Auktion avslutas: {listing.endDate}</p>
+                <button onClick={() => deleteAd(listing.id)}>Ta bort</button>
+              </div>
             </div>
           </li>
         ))}
@@ -50,21 +53,6 @@ function AdsPage() {
     </section>
   )
 }
-  function AdsCard({ adInfo }) {
-    const { id, username, location, title, description, startDate, endDate } = adInfo
-    return (
-      <li key={id}>
-        <div>
-          <img className='logo' src={logo} />
-          <h2>Namn: {username}</h2>
-          <p>Rubrik: {title}</p>
-          <p>Plats: {location}</p>
-          <p>Om mig: {description}</p>
-          <p>Auktion publicerad: {startDate}</p>
-          <p>Auktion avslutas: {endDate}</p>
-        </div>
-      </li>
-    )
-  }
+
 
 export default AdsPage

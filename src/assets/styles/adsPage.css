@@ -1,0 +1,39 @@
+.ads-container {
+  padding: 20px;
+}
+
+.ads-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ad-wrapper {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.ad-content {
+  display: grid;
+  grid-template-columns: 100px auto;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #c82333;
+}

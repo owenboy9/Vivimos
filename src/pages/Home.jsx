@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { GlobalContext } from "../GlobalContext"
 import AdList from "../components/AdList"
+import Filter from '../components/Filter'
 
 
 function Home() {
@@ -10,6 +11,7 @@ function Home() {
 
   return (
     <>
+    <Filter />
     <AdList />
     </>
   );

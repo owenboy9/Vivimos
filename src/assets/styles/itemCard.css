@@ -24,3 +24,7 @@ h2 {
 button {
   cursor: pointer;
 }
+
+.bidPaddle {
+  width: 50px;
+}

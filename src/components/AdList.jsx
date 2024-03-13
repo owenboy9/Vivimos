@@ -25,7 +25,7 @@ function AdList() {
   }, [])
 
   return <section>
-    <h2>Aktuella auktioner:</h2>
+    <h2 className="current">Aktuella auktioner:</h2>
 
     {filteredAds.map(ItemCard)}
 

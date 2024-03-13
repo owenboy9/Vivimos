@@ -26,6 +26,10 @@
   color: rgba(236, 233, 228, 0.781);
 }
 
+.ad-title {
+  margin-bottom: 6px;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -74,4 +78,3 @@ button {
   margin-left: 5px;
   margin-top: 24px;
 }
-

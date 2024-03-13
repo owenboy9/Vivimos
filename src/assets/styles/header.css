@@ -4,6 +4,13 @@
   display: flexbox;
 }
 
+.login-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
 .logo {
   display: block;
   margin: auto;

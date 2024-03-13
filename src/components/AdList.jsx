@@ -43,7 +43,7 @@ function AdList() {
       <div className='itemCard-container' key={id}>
         <div className='ad-info'>
 
-          <h3 className="add-title"><Link to={`/ad/${id}`}>{rubrik}</Link></h3>
+          <h3 className="ad-title"><Link to={`/ad/${id}`}>{rubrik}</Link></h3>
           <p>En {ålder} år gammal {kön.toLowerCase()}, från {län} <br /> som är {sysselsättning.toLowerCase()} och bor i {stad.toLowerCase()}.</p>&nbsp;
           <p>Denna annons är aktiv till och med {enddate}.</p>
 

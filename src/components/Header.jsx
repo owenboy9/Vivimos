@@ -13,7 +13,9 @@ function Header() {
         </div>
       </a>
       <Nav />
-      <Login />
+      <div className='login-header'>
+        <Login />
+      </div>
     </div>
   )
 }

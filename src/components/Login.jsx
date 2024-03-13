@@ -48,18 +48,18 @@ function Login() {
 
       {modalOpen && loginOpen && (
         createPortal(
-          <Modal>
-            <h2>Logga in</h2>
+          <Modal>&nbsp;
+            <h2 className="modal-heading">Logga in</h2>
             <form onSubmit={e => fetchUser(e, formData)}>
-              <label>
+              <label className="modal-label">
                 Användarnamn:&nbsp;
               </label>
-              <input type="text" name="username" value={formData.username} onChange={e => handleChange(e)}></input>
+              <input type="text" name="username" className="modal-input" value={formData.username} onChange={e => handleChange(e)}></input>
               <br />
-              <label>
+              <label className="modal-label">
                 Lösenord:&nbsp;
               </label>
-              <input type="password" name="password" value={formData.password} onChange={e => handleChange(e)}></input>
+              <input type="password" name="password" className="modal-input" value={formData.password} onChange={e => handleChange(e)}></input>
               <br />
               <button type="submit">Login</button>
             </form>
@@ -69,24 +69,24 @@ function Login() {
 
       {modalOpen && regOpen && (
         <Modal>
-          <h2>Registrera ny användare</h2>
+          <h2 className="modal-heading">Registrera ny användare</h2>
           <form onSubmit={e => createUser(e)}>
-            <label>
-              Användarnamn:&nbsp;
+            <label className="modal-label">
+              Användarnamn:
+              <input type="text" name="username" className="modal-input"></input>
             </label>
-            <input type="text" name="username"></input>
             <br />
-            <label>
-              Email:&nbsp;
+            <label className="modal-label">
+              Email:
+              <input type="email" name="email" className="modal-input"></input>
             </label>
-            <input type="email" name="email"></input>
             <br />
-            <label>
-              Lösenord:&nbsp;
+            <label className="modal-label">
+              Lösenord:
+              <input type="password" name="password" className="modal-input"></input>
             </label>
-            <input type="password" name="password"></input>
             <br />
-            <button onClick={handleReg}>Registrera</button>
+            <button className="modal-button" onClick={handleReg}>Registrera</button>
           </form>
         </Modal>
       )}

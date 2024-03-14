@@ -1,5 +1,5 @@
-fantalec mikael fant
-lvsandstrom 
-owenboy9
-axelmartini
-Zeinab-I86
+Mikael Fant fantalec
+Lovisa Sandström lvsandstrom 
+Owen Kraus owenboy9
+Erik Cronqvist axelmartini
+Zeinab Ibrahim Zeinab-I86

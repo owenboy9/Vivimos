@@ -49,6 +49,15 @@ function AdDetailed() {
       kidsSentence += `, som ${pronomen.toLowerCase()} inte bor tillsammans med.`;
     }
   }
+  const nearby = ["skog", "hav", "kultur", "shopping"].filter(attraction => ad[attraction]);
+  let nearbySentence = "";
+
+  if (nearby.length > 0) {
+    nearbySentence = `${pronomen} bor i närheten av: ${nearby.join(", ")}.`;
+  } else {
+    nearbySentence = `${pronomen} har inte angivit vad som erbjuds i närområdet.`;
+  }
+
 
   let petsString = petsList.join(", ");
 
@@ -57,6 +66,31 @@ function AdDetailed() {
   if (ad.Annat) {
     petsSentence += ` ${pronomen} har även ${ad.Annat.toLowerCase()}.`;
   }
+  let relStatusSentence = "";
+
+  switch(ad.relstatus.toLowerCase()) {
+    case "ensamvarg":
+      relStatusSentence = `${pronomen} är en övertygad singel, en ensamvarg.`;
+      break
+    case "exklusiv särbo":
+      relStatusSentence = `${pronomen} är i ett exklusivt särboförhållande.`;
+      break;
+    case "exklusiv sambo":
+      relStatusSentence = `${pronomen} är i ett exklusivt samboförhållande.`;
+      break;
+    case "öppen särbo":
+      relStatusSentence = `${pronomen} är i ett öppet särboförhållande.`;
+      break;
+    case "öppen sambo":
+      relStatusSentence = `${pronomen} är sambo, i ett öppen relation.`;
+      break;
+    case "singel":
+      relStatusSentence = `${pronomen} är singel, men öppen för nya relationer.`;
+      break;
+    default:
+      relStatusSentence = `${pronomen} har inte angivit sin relationsstatus.`;
+  }
+
 
 
   return (
@@ -65,9 +99,17 @@ function AdDetailed() {
       <p>{ad.presentation}</p>
       <p>Annonsören är en {ad.ålder} år gammal {ad.kön.toLowerCase()},
         från {ad.län} län. <br/> {pronomen} bor i {ad.boende.toLowerCase()} i {ad.stad.toLowerCase()}. </p>
-      <p>{petsSentence}</p>
-      <p>{kidsSentence}</p>
+      <p>{nearbySentence}</p>
 
+      <p>{petsSentence}</p>
+      <p>{relStatusSentence}</p>
+      <p>{kidsSentence}</p>
+      {ad.sysselsättning && ad.sysselsättning !== "" && (
+        <p>{pronomen} är verksam som {ad.sysselsättning}</p>
+      )}
+      {ad.fritidsintressen && ad.fritidsintressen !== "" && (
+        <p>{pronomen} har angivit följande fritidsintressen: {ad.fritidsintressen}</p>
+      )}
       <p>Denna annons är aktiv till och med {ad.enddate}.</p>
       {ad.bids ? (<p>Antal bud: {ad.bids.length}</p>) : null}
       <button onClick={handleOfferButton}>Lägg ett bud</button>

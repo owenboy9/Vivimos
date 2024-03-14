@@ -10,12 +10,12 @@ function Userpage() {
   const [ userData, setUserData] = useState([])
   const [ adData, setAdData] = useState([])
 
-  const location = useLocation()
+  /* const location = useLocation()
   const navigate = useNavigate()
   if (!location.pathname.includes(`users/${activeUser.id}`) && activeUser) {
     
     navigate(`/users/${activeUser.id}`)
-  }
+  } */
 
   useEffect(() => {
     const fetchUserData = async () => {

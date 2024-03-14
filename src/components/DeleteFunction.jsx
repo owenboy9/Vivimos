@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 
 
-function deleteAd({ listingId, onClick }) {
+function deleteAds({ listingId, onClick }) {
   const [remove, setRemove] = useState('')
   
   async function removeAd() {
@@ -56,6 +56,6 @@ function deleteUser({ userId, onClick }) {
   )
 }
 
-export {deleteAd, deleteUser }
+export {deleteAds, deleteUser }
 
 

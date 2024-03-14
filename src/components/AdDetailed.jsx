@@ -38,6 +38,17 @@ function AdDetailed() {
       petsList.push(pet.toLowerCase());
     }
   }
+  let kidsSentence = ad.barnAntal === "" ? `${pronomen} har inga barn.` : `${pronomen} har ${ad.barnAntal} barn`;
+
+  if (ad.barnBoende !== "") {
+    if (ad.barnBoende.toLowerCase() === "ja") {
+      kidsSentence += `, som ${pronomen.toLowerCase()} bor tillsammans med.`;
+    } else if (ad.barnBoende.toLowerCase() === "delvis") {
+      kidsSentence += `, som ${pronomen.toLowerCase()} delvis bor tillsammans med.`;
+    } else if (ad.barnBoende.toLowerCase() === "nej") {
+      kidsSentence += `, som ${pronomen.toLowerCase()} inte bor tillsammans med.`;
+    }
+  }
 
   let petsString = petsList.join(", ");
 
@@ -52,8 +63,10 @@ function AdDetailed() {
     <div>
       <h1>{ad.rubrik}</h1>
       <p>{ad.presentation}</p>
-      <p>Annonsören är en {ad.ålder} år gammal {ad.kön.toLowerCase()}, från {ad.län} län. <br/> {pronomen} är {ad.sysselsättning.toLowerCase()} och bor i {ad.stad.toLowerCase()}. </p>
+      <p>Annonsören är en {ad.ålder} år gammal {ad.kön.toLowerCase()},
+        från {ad.län} län. <br/> {pronomen} bor i {ad.boende.toLowerCase()} i {ad.stad.toLowerCase()}. </p>
       <p>{petsSentence}</p>
+      <p>{kidsSentence}</p>
 
       <p>Denna annons är aktiv till och med {ad.enddate}.</p>
       {ad.bids ? (<p>Antal bud: {ad.bids.length}</p>) : null}

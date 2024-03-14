@@ -1,14 +1,21 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { GlobalContext } from "../GlobalContext"
-import { useParams } from 'react-router-dom'
+import { useParams, useLocation, useNavigate } from 'react-router-dom'
 
 
 function Userpage() {
   
   const { activeUser, setActiveUser } = useContext(GlobalContext)
-  const { id } = useParams()
+  let { id } = useParams()
   const [ userData, setUserData] = useState([])
   const [ adData, setAdData] = useState([])
+
+  const location = useLocation()
+  const navigate = useNavigate()
+  if (!location.pathname.includes(`users/${activeUser.id}`) && activeUser) {
+    
+    navigate(`/users/${activeUser.id}`)
+  }
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -44,6 +51,8 @@ function Userpage() {
       fetchAd()
     }
   }, [userData])
+
+ 
 
 const fetchAd = async () => {
   console.log('fetching ad')

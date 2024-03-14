@@ -548,6 +548,41 @@
       "bids": [
         "8224"
       ]
+    },
+    {
+      "id": "c07d",
+      "rubrik": "This is it",
+      "län": "Västerbotten",
+      "boende": "Husvagn",
+      "boendeAnnat": "",
+      "sysselsättning": "brandman",
+      "relstatus": "öppen särbo",
+      "partnerinfo": "britta 48",
+      "barnAntal": "",
+      "barnBoende": "",
+      "husdjur": "",
+      "Hund": "",
+      "Katt": "",
+      "Fågel": "",
+      "Häst": "",
+      "Annat": "",
+      "stad": "Småstad",
+      "stadAlternativ": "",
+      "Skog": "",
+      "Hav": "Hav / Sjö",
+      "Kultur": "",
+      "Shopping": "",
+      "bil": "",
+      "bilinfo": "",
+      "barn": "",
+      "fritidsintressen": "spelar poker",
+      "presentation": "Do you want to eat ice cream?",
+      "ålder": "37",
+      "kön": "Kvinna",
+      "publicerad": true,
+      "enddate": "2024-04-30",
+      "userId": "8224",
+      "endTimestamp": 1714435200000
     }
   ]
 }

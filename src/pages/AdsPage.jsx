@@ -1,58 +1,67 @@
-
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom"
 import logo from '../assets/images/vivimoslogo.png'
 import '../assets/styles/adsPage.css'
 
 function AdsPage() {
-  const [listings, setListings] = useState([])
+  const [ads, setAds] = useState([])
 
   useEffect(() => {
-    async function load() {
-      const response = await fetch("/db.json")
-      const data = await response.json()
-      setListings(data.listings)
+    async function fetchAds() {
+      try {
+        const response = await fetch("/db.json");
+        const data = await response.json();
+        setAds(data.ads);
+      } catch (error) {
+        console.error("Error fetching ads:", error);
+      }
     }
-    load()
-  }, [])
+    fetchAds();
+  }, []);
 
-  const deleteAd = async (listingId) => {
-    const response = await fetch(`http://localhost:3001/listings/${listingId}`, {
-      method: 'DELETE'
-    })
+  const deleteAd = async (adId) => {
+    try {
+      const response = await fetch(`http://localhost:3001/ads/${adId}`, {
+        method: 'DELETE'
+      });
 
-    if (response.ok) {
-      setListings(listings.filter(ad = ad.id !== listingId))
-      onClick(listingId)
-    } else {
-      console.error('Fel vid borttagning av annonsen.')
+      if (response.ok) {
+        setAds(ads.filter(ad => ad.id !== adId));
+        console.log(`Ad with ID ${adId} deleted successfully.`);
+      } else {
+        console.error('Error deleting ad.');
+      }
+    } catch (error) {
+      console.error('Error deleting ad:', error);
     }
   }
 
   return (
     <section className="ads-container">
-      <h1>Hej detta är annons-sidan</h1>
+      <h1>Annonslista</h1>
       <ul className="ads-list">
-        {listings.map(listing => (
-          <li key={listing.id} className="ad-wrapper">
+        {ads.map(ad => (
+          <li key={ad.id} className="ad-wrapper">
             <div className="ad-content">
               <img className='logo' src={logo} alt="logo" />
               <div>
-                <h2>Namn: {listing.username}</h2>
-                <p>Rubrik: {listing.title}</p>
-                <p>Plats: {listing.location}</p>
-                <p>Om mig: {listing.description}</p>
-                <p>Auktion publicerad: {listing.startDate}</p>
-                <p>Auktion avslutas: {listing.endDate}</p>
-                <button onClick={() => deleteAd(listing.id)}>Ta bort</button>
+                <p>Rubrik: {ad.rubrik}</p>
+                <p>Län: {ad.län}</p>
+                <p>Boende: {ad.boende}</p>
+                <p>Sysselsättning: {ad.sysselsättning}</p>
+                <p>Relatiionsstatus: {ad.relstatus}</p>
+                <p>Husdjur: {ad.husdjurHar ? 'Ja' : 'Nej'}</p>
+                <p>Stad: {ad.stad}</p>
+                <p>Ålder: {ad.ålder}</p>
+                <p>Kön: {ad.kön}</p>
+                <p>Presentation: {ad.presentation}</p>
+                <button onClick={() => deleteAd(ad.id)}>Ta bort</button>
               </div>
             </div>
           </li>
         ))}
       </ul>
     </section>
-  )
+  );
 }
 
-
-export default AdsPage
+export default AdsPage;

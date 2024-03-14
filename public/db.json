@@ -660,7 +660,10 @@
       "publicerad": true,
       "enddate": "2024-03-29",
       "userId": "b456",
-      "endTimestamp": 1711670400000
+      "endTimestamp": 1711670400000,
+      "bids": [
+        "b456"
+      ]
     }
   ]
 }

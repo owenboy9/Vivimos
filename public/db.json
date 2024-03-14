@@ -77,6 +77,13 @@
       "role": "user"
     },
     {
+      "id": "b456",
+      "username": "brillinat_emma",
+      "email": "emma@trinket.us",
+      "password": "wow",
+      "role": "user"
+    },
+    {
       "id": "4dfc",
       "username": "idiot",
       "email": "apa@gmail.com",
@@ -339,7 +346,7 @@
       "län": "Kalmar",
       "boende": "Annat",
       "boendeAnnat": "",
-      "sysselsättning": "",
+      "sysselsättning": dumbom
       "relstatus": "knasigt",
       "partnerinfo": "",
       "barnAntal": "10",
@@ -359,7 +366,7 @@
       "bil": "bil",
       "bilinfo": "",
       "barn": "barn",
-      "fritidsintressen": "",
+      "fritidsintressen": "dumma sig, göra korkade grejer",
       "presentation": "",
       "ålder": "21",
       "kön": "Man",
@@ -368,7 +375,8 @@
       "Hav / Sjö": true,
       "userId": "ad58",
       "bids": [
-        "1"
+        "1",
+        "b456"
       ]
     },
     {
@@ -404,7 +412,11 @@
       "publicerad": true,
       "enddate": "2024-03-21",
       "Hav / Sjö": true,
-      "userId": "ad58"
+      "userId": "ad58",
+      "bids": [
+        "1",
+        "b456"
+      ]
     },
     {
       "id": "0ff1",
@@ -438,7 +450,10 @@
       "kön": "Man",
       "publicerad": true,
       "enddate": "2024-03-29",
-      "userId": "1"
+      "userId": "1",
+      "bids": [
+        "1"
+      ]
     },
     {
       "id": "db12",
@@ -583,6 +598,41 @@
       "enddate": "2024-04-30",
       "userId": "8224",
       "endTimestamp": 1714435200000
+    },
+    {
+      "id": "6d36",
+      "rubrik": "efw",
+      "län": "",
+      "boende": "",
+      "boendeAnnat": "",
+      "sysselsättning": "sd",
+      "relstatus": "",
+      "partnerinfo": "",
+      "barnAntal": "",
+      "barnBoende": "",
+      "husdjur": "",
+      "Hund": "",
+      "Katt": "",
+      "Fågel": "",
+      "Häst": "",
+      "Annat": "",
+      "stad": "",
+      "stadAlternativ": "",
+      "Skog": "",
+      "Hav": "",
+      "Kultur": "",
+      "Shopping": "",
+      "bil": "",
+      "bilinfo": "",
+      "barn": "",
+      "fritidsintressen": "wed",
+      "presentation": "wd",
+      "ålder": "",
+      "kön": "",
+      "publicerad": false,
+      "enddate": "",
+      "userId": "b456",
+      "endTimestamp": null
     }
   ]
 }

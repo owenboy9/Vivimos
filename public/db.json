@@ -77,6 +77,13 @@
       "role": "user"
     },
     {
+      "id": "d4fe",
+      "username": "micke2",
+      "email": "mikaelfant@gmail.com",
+      "password": "1212",
+      "role": "user"
+    },
+    {
       "id": "b456",
       "username": "brillinat_emma",
       "email": "emma@trinket.us",
@@ -346,7 +353,7 @@
       "län": "Kalmar",
       "boende": "Annat",
       "boendeAnnat": "",
-      "sysselsättning": dumbom
+      "sysselsättning": "",
       "relstatus": "knasigt",
       "partnerinfo": "",
       "barnAntal": "10",
@@ -366,7 +373,7 @@
       "bil": "bil",
       "bilinfo": "",
       "barn": "barn",
-      "fritidsintressen": "dumma sig, göra korkade grejer",
+      "fritidsintressen": "",
       "presentation": "",
       "ålder": "21",
       "kön": "Man",
@@ -454,6 +461,7 @@
       "bids": [
         "1"
       ]
+      "userId": "ad58"
     },
     {
       "id": "db12",
@@ -600,6 +608,41 @@
       "endTimestamp": 1714435200000
     },
     {
+      "id": "62e0",
+      "rubrik": "Frihet & fantasi",
+      "län": "Skåne",
+      "boende": "Lägenhet",
+      "boendeAnnat": "",
+      "sysselsättning": "studerande",
+      "relstatus": "exklusiv särbo",
+      "partnerinfo": "",
+      "barnAntal": "1",
+      "barnBoende": "Delvis",
+      "husdjur": "",
+      "Hund": "",
+      "Katt": "",
+      "Fågel": "",
+      "Häst": "",
+      "Annat": "",
+      "stad": "Storstad",
+      "stadAlternativ": "",
+      "Skog": "",
+      "Hav": "Hav / Sjö",
+      "Kultur": "Kultur",
+      "Shopping": "Shopping",
+      "bil": "bil",
+      "bilinfo": "Mercedes",
+      "barn": "barn",
+      "fritidsintressen": "Spelar musik, lyssnar på musik, mm",
+      "presentation": "Programmeringsstuderande 52-årig separerad  kulturman (utgiven romanförfattare, översättare) med särbegåvad varannanhelgsdotter och frispråkig, sexglad (kvinnlig) ingenjörssärbo, samt sällanrepande improvisationskrautband. Familjefritt boende i centrala Malmö. \n",
+      "ålder": "52",
+      "kön": "Man",
+      "publicerad": true,
+      "enddate": "2024-03-30",
+      "userId": "d4fe",
+      "endTimestamp": 1711756800000
+    },
+    {
       "id": "6d36",
       "rubrik": "efw",
       "län": "",
@@ -633,6 +676,41 @@
       "enddate": "",
       "userId": "b456",
       "endTimestamp": null
+    },
+    {
+      "id": "50e6",
+      "rubrik": "vardagsromantism vid en sjö",
+      "län": "Blekinge",
+      "boende": "Husvagn",
+      "boendeAnnat": "",
+      "sysselsättning": "vävare",
+      "relstatus": "knasigt",
+      "partnerinfo": "",
+      "barnAntal": "",
+      "barnBoende": "",
+      "husdjur": "husdjur",
+      "Hund": "",
+      "Katt": "",
+      "Fågel": "Fågel",
+      "Häst": "",
+      "Annat": "möss",
+      "stad": "Bystan",
+      "stadAlternativ": "",
+      "Skog": "",
+      "Hav": "Hav / Sjö",
+      "Kultur": "Kultur",
+      "Shopping": "",
+      "bil": "",
+      "bilinfo": "",
+      "barn": "",
+      "fritidsintressen": "drömmer och skriver dikter",
+      "presentation": "jag är en modern version av lord byron. take it or leave it.",
+      "ålder": "22",
+      "kön": "Man",
+      "publicerad": true,
+      "enddate": "2024-03-30",
+      "userId": "b456",
+      "endTimestamp": 1711756800000
     }
   ]
 }

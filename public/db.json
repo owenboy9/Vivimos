@@ -275,7 +275,10 @@
       "publicerad": true,
       "enddate": "2024-04-30",
       "userId": "8224",
-      "endTimestamp": 1714435200000
+      "endTimestamp": 1714435200000,
+      "bids": [
+        "b456"
+      ]
     },
     {
       "id": "62e0",
@@ -380,7 +383,10 @@
       "publicerad": true,
       "enddate": "2024-03-30",
       "userId": "b456",
-      "endTimestamp": 1711756800000
+      "endTimestamp": 1711756800000,
+      "bids": [
+        "b456"
+      ]
     },
     {
       "id": "b816",

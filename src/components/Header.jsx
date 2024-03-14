@@ -5,11 +5,17 @@ import logo from '../assets/images/vivimoslogo.png'
 import '../assets/styles/header.css'
 
 function Header() {
-  return(
+  return (
     <div className='header-container'>
-      <img className='logo' src={logo} />
+      <a href="/">
+        <div classname='logo-container'>
+          <img className='logo' src={logo} />
+        </div>
+      </a>
       <Nav />
-      <Login />
+      <div className='login-header'>
+        <Login />
+      </div>
     </div>
   )
 }

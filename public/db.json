@@ -75,6 +75,13 @@
       "email": "mikaelfant@gmail.com",
       "password": "123",
       "role": "user"
+    },
+    {
+      "id": "d4fe",
+      "username": "micke2",
+      "email": "mikaelfant@gmail.com",
+      "password": "1212",
+      "role": "user"
     }
   ],
   "ads": [
@@ -332,7 +339,7 @@
       "län": "Kalmar",
       "boende": "Annat",
       "boendeAnnat": "",
-      "sysselsättning": dumbom
+      "sysselsättning": "",
       "relstatus": "knasigt",
       "partnerinfo": "",
       "barnAntal": "10",
@@ -352,7 +359,7 @@
       "bil": "bil",
       "bilinfo": "",
       "barn": "barn",
-      "fritidsintressen": "dumma sig, göra korkade grejer",
+      "fritidsintressen": "",
       "presentation": "",
       "ålder": "21",
       "kön": "Man",
@@ -431,10 +438,7 @@
       "kön": "Man",
       "publicerad": true,
       "enddate": "2024-03-29",
-      "userId": "ad58",
-      "bids": [
-        "ad58"
-      ]
+      "userId": "ad58"
     },
     {
       "id": "db12",
@@ -544,6 +548,41 @@
       "bids": [
         "8224"
       ]
+    },
+    {
+      "id": "62e0",
+      "rubrik": "Frihet & fantasi",
+      "län": "Skåne",
+      "boende": "Lägenhet",
+      "boendeAnnat": "",
+      "sysselsättning": "studerande",
+      "relstatus": "exklusiv särbo",
+      "partnerinfo": "",
+      "barnAntal": "1",
+      "barnBoende": "Delvis",
+      "husdjur": "",
+      "Hund": "",
+      "Katt": "",
+      "Fågel": "",
+      "Häst": "",
+      "Annat": "",
+      "stad": "Storstad",
+      "stadAlternativ": "",
+      "Skog": "",
+      "Hav": "Hav / Sjö",
+      "Kultur": "Kultur",
+      "Shopping": "Shopping",
+      "bil": "bil",
+      "bilinfo": "Mercedes",
+      "barn": "barn",
+      "fritidsintressen": "Spelar musik, lyssnar på musik, mm",
+      "presentation": "Programmeringsstuderande 52-årig separerad  kulturman (utgiven romanförfattare, översättare) med särbegåvad varannanhelgsdotter och frispråkig, sexglad (kvinnlig) ingenjörssärbo, samt sällanrepande improvisationskrautband. Familjefritt boende i centrala Malmö. \n",
+      "ålder": "52",
+      "kön": "Man",
+      "publicerad": true,
+      "enddate": "2024-03-30",
+      "userId": "d4fe",
+      "endTimestamp": 1711756800000
     }
   ]
 }

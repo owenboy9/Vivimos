@@ -313,7 +313,10 @@
       "publicerad": true,
       "enddate": "2024-03-30",
       "userId": "d4fe",
-      "endTimestamp": 1711756800000
+      "endTimestamp": 1711756800000,
+      "bids": [
+        "b456"
+      ]
     },
     {
       "id": "6d36",
@@ -422,6 +425,44 @@
       "enddate": "2024-03-26",
       "userId": "b456",
       "endTimestamp": 1711411200000
+    },
+    {
+      "id": "16fd",
+      "rubrik": "fwd",
+      "län": "Kalmar",
+      "boende": "Gård",
+      "boendeAnnat": "",
+      "sysselsättning": "w4eradserfsed",
+      "relstatus": "",
+      "partnerinfo": "",
+      "barnAntal": "",
+      "barnBoende": "",
+      "husdjur": "",
+      "Hund": "",
+      "Katt": "",
+      "Fågel": "",
+      "Häst": "",
+      "Annat": "",
+      "stad": "Mellanstor stad",
+      "stadAlternativ": "",
+      "Skog": "",
+      "Hav": "Hav / Sjö",
+      "Kultur": "",
+      "Shopping": "",
+      "bil": "",
+      "bilinfo": "",
+      "barn": "",
+      "fritidsintressen": "gresfd",
+      "presentation": "wfde",
+      "ålder": "20",
+      "kön": "Annat",
+      "publicerad": true,
+      "enddate": "2024-04-25",
+      "userId": "b456",
+      "endTimestamp": 1714003200000,
+      "bids": [
+        "b456"
+      ]
     }
   ]
 }
